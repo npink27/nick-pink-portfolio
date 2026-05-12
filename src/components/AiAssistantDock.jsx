@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import AiDockAvatar from "./AiDockAvatar.jsx";
-import { getMockAiReply, INTEL_PROMPTS } from "../data/siteData.js";
+import { AI_ASSISTANT_INTRO, getMockAiReply, INTEL_PROMPTS } from "../data/siteData.js";
 
 export default function AiAssistantDock({ open, onOpenChange }) {
-  const [messages, setMessages] = useState([{ role: "assistant", content: "Ask about MarketWise, clips, tools, or how to reach Nick." }]);
+  const [messages, setMessages] = useState([{ role: "assistant", content: AI_ASSISTANT_INTRO }]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const endRef = useRef(null);

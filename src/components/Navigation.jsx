@@ -1,10 +1,10 @@
-import { EMAIL } from "../data/siteData.js";
+import { LINKEDIN } from "../data/siteData.js";
 
 const PAGES = [
   { id: "home", label: "Home" },
   { id: "work", label: "Work" },
   { id: "career", label: "Career" },
-  { id: "capabilities", label: "Capabilities" },
+  { id: "capabilities", label: "Tools" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -25,8 +25,8 @@ export default function Navigation({ page, setPage, aiOpen, onToggleAi }) {
             AI
           </button>
         </nav>
-        <a className="nav-cta" href={EMAIL}>
-          Email
+        <a className="nav-cta" href={LINKEDIN} target="_blank" rel="noreferrer">
+          LinkedIn
         </a>
       </header>
 

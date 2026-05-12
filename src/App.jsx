@@ -14,7 +14,7 @@ const TITLES = {
   home: "Nick Pink",
   work: "Work — Nick Pink",
   career: "Career — Nick Pink",
-  capabilities: "Capabilities — Nick Pink",
+  capabilities: "Tools — Nick Pink",
   contact: "Contact — Nick Pink",
 };
 

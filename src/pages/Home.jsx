@@ -4,9 +4,9 @@ import ContactCTA from "../components/ContactCTA.jsx";
 import { LINKEDIN, STATS } from "../data/siteData.js";
 
 const fade = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
 };
 
 export default function Home({ setPage }) {
@@ -29,22 +29,17 @@ export default function Home({ setPage }) {
             <span className="pink">Pink</span>
           </h1>
 
-          <div className="hero-copy">
+          <p className="hero-sub">Marketing systems, paid media, creator growth, AI workflows, and digital distribution.</p>
+
+          <div className="hero-copy hero-copy-grounded">
+            <p>Worked across public-company marketing, creator ecosystems, crypto launches, and performance advertising.</p>
             <p>
-              <strong>23. Two exits.</strong>
+              Built scalable systems for paid acquisition, clipping pipelines, outbound automation, and social growth.
             </p>
-            <p>Built distribution systems that print reach at ugly scale.</p>
             <p>
-              Crypto launches.
-              <br />
-              Paid media.
-              <br />
-              AI workflows.
-              <br />
-              Public-market creator systems.
+              Generated millions of organic views, managed large-scale campaigns, and built growth infrastructure across
+              multiple industries.
             </p>
-            <p>I build attention infrastructure that moves faster than meetings.</p>
-            <p className="hero-kicker">If it doesn&apos;t move attention, I don&apos;t care about it.</p>
           </div>
 
           <div className="hero-actions-min">
@@ -70,7 +65,7 @@ export default function Home({ setPage }) {
         </div>
       </div>
 
-      <div className="wrap section-breathe">
+      <div className="wrap section-breathe section-breathe-tight">
         <ContactCTA />
       </div>
     </div>

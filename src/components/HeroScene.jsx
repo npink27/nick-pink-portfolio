@@ -28,7 +28,7 @@ function ParallaxRig({ children }) {
 
 function DistortField() {
   return (
-    <Float speed={1.1} rotationIntensity={0.35} floatIntensity={0.55}>
+    <Float speed={0.55} rotationIntensity={0.18} floatIntensity={0.32}>
       <mesh scale={2.45}>
         <icosahedronGeometry args={[1, 48]} />
         <MeshDistortMaterial
@@ -37,8 +37,8 @@ function DistortField() {
           emissiveIntensity={0.55}
           roughness={0.42}
           metalness={0.55}
-          speed={1.65}
-          distort={0.3}
+          speed={0.9}
+          distort={0.22}
           radius={0.92}
         />
       </mesh>
@@ -54,8 +54,8 @@ function Scene() {
       <directionalLight position={[-4, -1.5, 3]} intensity={0.35} color="#f5f0eb" />
       <pointLight position={[0, 1.5, 2]} intensity={0.4} color="#ffb8d4" distance={12} decay={2} />
       <DistortField />
-      <Sparkles count={160} scale={14} size={2.2} speed={0.35} color="#ffb8d4" opacity={0.85} />
-      <Sparkles count={100} scale={11} size={1.4} speed={0.22} color="#f5f0eb" opacity={0.55} />
+      <Sparkles count={70} scale={14} size={1.6} speed={0.12} color="#ffb8d4" opacity={0.55} />
+      <Sparkles count={45} scale={11} size={1.1} speed={0.08} color="#f5f0eb" opacity={0.35} />
     </ParallaxRig>
   );
 }

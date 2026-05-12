@@ -1,17 +1,16 @@
-/** Ticker */
+/** Ticker: metric + short context */
 export const STATS = [
-  { v: "2.6M+", l: "views · 12d" },
-  { v: "$2B+", l: "KISHU peak" },
-  { v: "17.5M", l: "TikTok campaign" },
-  { v: "4.25×", l: "ROAS · Minute" },
-  { v: "15K+", l: "emails / mo" },
-  { v: "$0.04-$0.08", l: "CPC bands" },
-  { v: "140K+", l: "FB views · 2wk" },
-  { v: "$1.5M+", l: "Wayfair savings" },
+  { v: "2.6M+", l: "organic views, 12 days, MarketWise" },
+  { v: "$2B+", l: "peak MC, KISHU window" },
+  { v: "4.25x", l: "ROAS, Minute Growth paid" },
+  { v: "$100K+", l: "monthly ad spend managed" },
+  { v: "15K+", l: "personalized emails/mo, outbound" },
+  { v: "$0.04-$0.08", l: "CPC bands, X and Meta" },
+  { v: "~$1.5M", l: "savings tied to Wayfair workflows" },
+  { v: "$1.2M+", l: "OOH-attributed revenue" },
 ];
 
 export const HERO_LIVE_METRICS = STATS;
-
 export const PROOF_TILES = HERO_LIVE_METRICS;
 
 export const CLIENTS = [
@@ -20,327 +19,338 @@ export const CLIENTS = [
   { name: "Rumble", color: "#85C742" },
   { name: "Kick", color: "#53FC18" },
   { name: "Fashion Nova", color: "#ffb8d4" },
-  { name: "$KISHU", color: "#ffb8d4" },
   { name: "MarketWise", color: "#ffb8d4" },
 ];
 
-/** Immersive career chapters (order: school through current) */
+/**
+ * Vertical career tree (newest first). NxtLvl folded into BU story on expand.
+ */
 export const CAREER_CHAPTERS = [
   {
-    id: "bu",
-    theme: "bu",
-    org: "Boston University",
-    role: "BSBA, Finance + Entrepreneurship",
-    years: "2021-2024",
-    cardTitle: "Boston University",
-    preview: "Questrom. NxtLvl started in a dorm. Real clients before the degree mattered.",
-    degree: "BSBA, Finance + Entrepreneurship",
-    paragraphs: [
-      "Boston University gave me the foundation. The internet gave me the real education.",
-      "Started NxtLvl from a dorm room while studying finance and entrepreneurship at Questrom.",
-      "First clients came from walking around Boston businesses in person.",
-      "Built something real before graduation.",
+    id: "marketwise",
+    emblem: "MW",
+    org: "MarketWise",
+    role: "Social Media and Digital Marketing Lead",
+    years: "Sep 2025 - May 2026",
+    summary: "Social growth, clipping, paid acquisition, and AI-assisted landing page systems for a public financial media company.",
+    details: [
+      "Built scalable social and digital growth infrastructure: organic content, paid social, clipping teams, creator strategy, and AI-assisted landing page workflows.",
+      "Focused on repeatable testing, faster production cycles, and cross-platform scaling tied to acquisition goals.",
+    ],
+    metrics: [
+      { v: "2.6M+", l: "organic views in 12 days" },
+      { v: "$0.04-$0.08", l: "CPC on X" },
+      { v: "10%", l: "CTRs on Meta (strong units)" },
+      { v: "<48h", l: "landing page builds vs ~3 weeks before" },
+    ],
+    featured: true,
+  },
+  {
+    id: "zeta",
+    emblem: "Z",
+    org: "Zeta Global",
+    role: "Marketing Analyst",
+    years: "Jun 2025 - Aug 2025",
+    summary: "Marketing analytics, SQL workflows, segmentation, dashboards, and campaign analysis in an enterprise marketing environment.",
+    details: [
+      "Worked on marketing analytics, SQL workflows, segmentation, dashboards, and large-scale campaign analysis.",
+      "Exposure to how enterprise marketing data and reporting pipelines are run end to end.",
     ],
     metrics: [],
     featured: false,
   },
   {
-    id: "nxtlvl",
-    theme: "nxtlvl",
-    org: "NxtLvl Adventures",
-    role: "Founder",
-    years: "Dec 2023 - Jan 2025",
-    cardTitle: "NxtLvl Adventures",
-    preview: "Cold outreach, internet instincts, six figures fast, exit by acquisition.",
-    degree: null,
-    paragraphs: [
-      "Started in college. Built through cold outreach, internet instincts, and figuring things out in real time.",
-      "Scaled the agency past six figures in under a year.",
-      "Worked across paid social, influencer campaigns, crypto launches, viral distribution, and guerrilla marketing systems.",
-      "Built campaigns that reached millions organically.",
-      "Eventually exited through acquisition.",
+    id: "minute",
+    emblem: "MG",
+    org: "Minute Growth",
+    role: "Marketing Operations Manager",
+    years: "Dec 2023 - Aug 2025",
+    summary: "Paid media, creator campaigns, outbound, influencer partnerships, and large-scale digital campaigns.",
+    details: [
+      "Built and managed systems across paid media, creator partnerships, outbound, Twitter/X trending, and out-of-home placements.",
+      "Clients and partners included brands in legal, food, streaming, and fashion verticals.",
     ],
     metrics: [
-      { v: "Mid 6 figs", l: "revenue" },
-      { v: "17.5M", l: "TikTok views · one campaign" },
-      { v: "20+", l: "client accounts" },
-      { v: "Multi", l: "viral campaign wins" },
+      { v: "$100K-$250K+", l: "monthly ad spend" },
+      { v: "4.25x", l: "ROAS" },
+      { v: "sub-$0.10", l: "CPC" },
+      { v: "15,000+", l: "personalized emails/month" },
+      { v: "240+", l: "accounts supported" },
     ],
     featured: false,
   },
   {
     id: "wayfair",
-    theme: "wayfair",
+    emblem: "WF",
     org: "Wayfair",
     role: "Data Analyst",
     years: "Jun 2024 - Dec 2024",
-    cardTitle: "Wayfair",
-    preview: "Self-taught SQL and GBQ. Fulfillment analytics. Roughly $1.5M in savings tied to workflows.",
-    degree: null,
-    paragraphs: [
-      "Wayfair forced me to become analytical fast.",
-      "Taught myself SQL, GBQ, Looker, Power BI, and Python while working full time.",
-      "Worked on fulfillment-center incident prevention systems and operational analytics.",
-      "Built workflows that contributed to roughly $1.5M in operational savings.",
-      "This was where I learned systems beat effort.",
+    summary: "Operational analytics tied to roughly $1.5M in savings. SQL, GBQ, Looker, and reporting in production.",
+    details: [
+      "Built operational analytics and incident-prevention workflows tied to fulfillment and savings outcomes.",
+      "Self-taught SQL and GBQ, used Looker, Power BI, and Python where the work needed to hold up in production.",
     ],
     metrics: [
-      { v: "~$1.5M", l: "operational savings tied to work" },
+      { v: "~$1.5M", l: "savings tied to analytics work" },
       { v: "SQL", l: "self-taught to prod" },
     ],
     featured: false,
   },
   {
-    id: "minute",
-    theme: "minute",
-    org: "Minute Growth",
-    role: "Marketing Operations Manager",
-    years: "Jan 2025 - Aug 2025",
-    cardTitle: "Minute Growth",
-    preview: "Pure volume. Paid, creators, OOH, X trending, AI outbound at real scale.",
-    degree: null,
-    paragraphs: [
-      "This was pure execution volume.",
-      "Built outbound systems. Ran paid traffic. Managed creators. Handled scaling problems in real time.",
-      "Worked with Morgan & Morgan, Buffalo Wild Wings, Rumble, Kick, Fashion Nova.",
-      "Managed six-figure ad spend, creator partnerships, Times Square placements, Twitter trending campaigns, and AI outbound infrastructure.",
-      "Built systems sending 15,000+ personalized emails monthly.",
-    ],
-    metrics: [
-      { v: "4.25×", l: "ROAS" },
-      { v: "Sub-$0.10", l: "CPC" },
-      { v: "15K+", l: "outbound emails / month" },
-    ],
-    featured: false,
-  },
-  {
-    id: "zeta",
-    theme: "zeta",
-    org: "Zeta Global",
-    role: "Marketing Analyst",
-    years: "Jun 2025 - Aug 2025",
-    cardTitle: "Zeta Global",
-    preview: "Enterprise marketing datasets. Segmentation, dashboards, how bigco pipes actually run.",
-    degree: null,
-    paragraphs: [
-      "Joined Zeta to understand how enterprise marketing infrastructure actually works.",
-      "Worked with SQL, segmentation, analytics, dashboards, and large-scale marketing datasets.",
-      "Exposure to high-level marketing analytics inside a real AI marketing company.",
-      "This sharpened the analytical side of how I think about growth.",
+    id: "bu",
+    emblem: "BU",
+    org: "Boston University",
+    role: "Bachelor's Degree",
+    years: "2021-2025",
+    summary: "Finance and entrepreneurship at Questrom. Started NxtLvl AdVentures while still in school.",
+    details: [
+      "BSBA with focus on finance and entrepreneurship through Questrom.",
+      "Launched NxtLvl AdVentures while attending: client work, paid and creator campaigns, and growth projects alongside coursework.",
     ],
     metrics: [],
     featured: false,
   },
-  {
-    id: "marketwise",
-    theme: "marketwise",
-    org: "MarketWise",
-    role: "Social + Digital Marketing Lead",
-    years: "Sep 2025 - Present",
-    cardTitle: "MarketWise",
-    preview: "Public company. Creator engine. Clips, paid, AI landing pages, sub-48h ship cycles.",
-    degree: null,
-    paragraphs: [
-      "MarketWise was the first place I could prove these systems inside a public company.",
-      "Built a scalable social distribution engine designed for long-term investor acquisition.",
-      "Turned creators from dead reach into millions of views in days.",
-      "Built clipping systems, paid acquisition systems, AI landing-page workflows, and creator growth infrastructure.",
-      "Reduced landing-page production from about 3 weeks to under 48 hours.",
-      "Built plug-and-play systems capable of scaling personalities into full creator brands.",
-    ],
-    metrics: [
-      { v: "2.6M+", l: "views in 12 days" },
-      { v: "500%+", l: "IG growth" },
-      { v: "1000%+", l: "X impressions lift" },
-      { v: "10%", l: "CTRs on strong units" },
-      { v: "$0.04-$0.08", l: "CPC bands" },
-      { v: "140K+", l: "Facebook views in 2 weeks" },
-    ],
-    closing: "The real asset was not any single metric. It was building a repeatable machine.",
-    featured: true,
-  },
 ];
 
-/** Work case studies + immersive detail */
+/** Work: grounded case cards (accordion on page) */
 export const CASE_STUDIES = [
   {
     id: "marketwise",
     title: "MarketWise",
-    tag: "NASDAQ · MKTW · clipping + paid + AI LPs",
-    copy: "Public-market media. Creator clips, paid acquisition, and landing pages shipped in under 48 hours when the window mattered.",
+    label: "Social Media and Digital Marketing Lead",
+    dateRange: "Sep 2025 - May 2026",
+    tag: "Public company, financial media",
+    copy: "Built social and digital growth systems for a public financial media company. Worked across organic content, paid social, clipping teams, creator strategy, and AI-assisted landing page workflows.",
     metrics: [
-      { v: "2.6M+", l: "organic views · 12d" },
-      { v: "500%+", l: "IG growth" },
-      { v: "<48h", l: "LP turnaround vs weeks" },
+      { v: "2.6M+", l: "organic views in 12 days" },
+      { v: "$0.04-$0.08", l: "CPC on X" },
+      { v: "10%", l: "CTRs on Meta" },
+      { v: "<48h", l: "LP builds vs ~3 weeks" },
     ],
     tone: "dark",
     detail: {
-      hooks: ["Clipping ops at cadence", "Paid to amplify winners", "AI-assisted LP factory"],
       paragraphs: [
-        "Built distribution so creators could go from dead reach to millions of views in days.",
-        "Stack included clipping discipline, paid acquisition, and repeatable AI landing-page workflows tied to acquisition goals.",
+        "Ran growth work where the output had to show up in dashboards and in-market performance, not in slide decks.",
+        "Reduced landing page production time from about three weeks to under 48 hours by tightening workflow, templates, and handoffs between creative and paid.",
+      ],
+      expandedBullets: [
+        "Clipping team infrastructure and posting cadence",
+        "Creator distribution and scaling",
+        "AI-assisted landing page workflows",
+        "Paid social testing and iteration",
+        "Cross-platform scaling with clear measurement",
       ],
     },
   },
   {
     id: "kishu",
     title: "KISHU",
-    tag: "Crypto launch",
-    copy: "One of the fastest meme coin runs of the cycle. Feed pressure plus venues plus community in parallel.",
+    label: "Crypto launch support",
+    dateRange: "",
+    tag: "Community and paid social",
+    copy: "Supported marketing behind one of the fastest meme coin runs of the cycle: community growth, Twitter/X trending support, and Times Square placement.",
     metrics: [
       { v: "$2B+", l: "peak market cap" },
-      { v: "Global", l: "trending velocity" },
-      { v: "Times Square", l: "OOH placement" },
+      { v: "Times Square", l: "placement" },
+      { v: "Global", l: "Twitter/X attention" },
     ],
     tone: "pink",
     detail: {
-      hooks: ["Launch-night coordination", "OOH + feed alignment", "Liquidity follows attention if you engineer both"],
       paragraphs: [
-        "Helped scale a violent window where the timeline and the street had to read the same story the same night.",
+        "Work centered on coordinating community-facing growth with high-visibility placements and social momentum during a compressed launch window.",
       ],
-    },
-  },
-  {
-    id: "x-trending",
-    title: "X trending",
-    tag: "$SAMO · $LINEO · multi-region",
-    copy: "Rank as a surface. Same-night trending stacks across countries when the clock started.",
-    metrics: [
-      { v: "#1-#6", l: "multi-country placements" },
-      { v: "Same night", l: "DE UK BR US TR IN" },
-    ],
-    tone: "charcoal",
-    detail: {
-      hooks: ["Volume + timing", "Geo windows", "Accounts and cadence under pressure"],
-      paragraphs: [
-        "Trending is logistics. Built runs that could hold rank against stadium-tier noise when it had to ship in hours.",
-      ],
+      expandedBullets: ["Community growth programs", "X trending coordination", "OOH placement in NYC", "Paid and organic social support"],
     },
   },
   {
     id: "minute",
     title: "Minute Growth",
-    tag: "OOH · creators · paid",
-    copy: "Six-figure spend, taxi networks, creators under contract, trending campaigns, outbound that reconciled to pipeline.",
+    label: "Marketing Operations Manager",
+    dateRange: "Dec 2023 - Aug 2025",
+    tag: "Paid, creators, outbound, OOH",
+    copy: "Built and managed campaign systems across paid media, creator partnerships, outbound systems, Twitter/X trending, and out-of-home placements.",
     metrics: [
-      { v: "240+", l: "accounts" },
-      { v: "15K+", l: "monthly content assets" },
-      { v: "6-fig", l: "OOH placements" },
+      { v: "$100K-$250K+", l: "monthly ad spend" },
+      { v: "4.25x", l: "ROAS" },
+      { v: "sub-$0.10", l: "CPC" },
+      { v: "15,000+", l: "personalized emails/month" },
+      { v: "240+", l: "accounts supported" },
     ],
     tone: "dark",
     detail: {
-      hooks: ["OOH as inventory", "Creators at contract scale", "Paid + organic feedback loop"],
       paragraphs: [
-        "Ran paid, clipping, OOH, and outbound where the scoreboard was spend, reach, and revenue, not slides.",
+        "Day to day was volume: budgets, creative testing, creator contracts, outbound infrastructure, and making sure reporting matched what finance needed to see.",
       ],
+      expandedBullets: ["Paid social at scale", "Creator and influencer partnerships", "Outbound automation", "X trending campaigns", "OOH coordination with digital funnels"],
     },
   },
   {
     id: "paid",
     title: "Paid acquisition",
-    tag: "Meta · TikTok · Google · X",
-    copy: "Bought reach like inventory. Optimized on CPC, CTR, CPL, ROAS, and what happened after the click.",
+    label: "Paid acquisition",
+    dateRange: "",
+    tag: "Meta, TikTok, Google, X",
+    copy: "Built paid campaigns across Meta, TikTok, Google, and X with a focus on efficient testing, strong hooks, and clear conversion paths.",
     metrics: [
-      { v: "113×", l: "ROAS · historical peak" },
-      { v: "$0.04-$0.08", l: "CPC bands" },
-      { v: "4-10%", l: "CTR on strong units" },
+      { v: "4.25x", l: "ROAS" },
+      { v: "$0.04-$0.08", l: "CPC" },
+      { v: "4-10%", l: "CTR" },
+      { v: "sub-$10", l: "CPL" },
     ],
     tone: "charcoal",
     detail: {
-      hooks: ["Hooks tested fast", "Creative volume", "Measurement that survives finance"],
       paragraphs: [
-        "Built paid systems around speed and distribution math. If the metric did not move in the ad account, it did not count as strategy.",
+        "Structured tests around creative variants, audience splits, and downstream conversion so spend could be defended with numbers, not narratives.",
       ],
+      expandedBullets: ["Creative iteration and hook testing", "Budget pacing and channel mix", "Attribution and downstream tracking", "Reporting for finance and clients"],
     },
   },
   {
-    id: "ai-outbound",
-    title: "AI + outbound",
-    tag: "Throughput systems",
-    copy: "Personalized outbound at volume, QA gates, and automations that deleted calendar time instead of adding theater.",
+    id: "ooh",
+    title: "Out-of-home",
+    label: "Out-of-home campaigns",
+    dateRange: "",
+    tag: "Physical media + digital funnels",
+    copy: "Worked on Times Square billboards, NYC taxi ads, LED trucks, and large-scale physical media placements tied to digital funnels.",
     metrics: [
-      { v: "15K+", l: "personalized emails / mo" },
-      { v: "<48h", l: "funnel builds when stacked" },
+      { v: "$1.2M+", l: "high-ticket revenue attributed" },
+      { v: "Times Square", l: "placements" },
+      { v: "NYC taxi", l: "network campaigns" },
     ],
     tone: "dark",
     detail: {
-      hooks: ["Mail at scale with guardrails", "Funnel factory", "Clip pipelines"],
       paragraphs: [
-        "If it did not increase output per head or cut ship time, it did not get wired into prod.",
+        "OOH was treated as part of the same acquisition story as digital: URLs, creative, and follow-up flows had to match the placement.",
       ],
+      expandedBullets: ["Times Square and high-visibility boards", "Taxi and transit networks", "LED trucks and route-based buys", "Handoff to landing pages and CRM"],
     },
   },
 ];
 
 export const WORK_LEGACY = [];
 
-export const CAPABILITIES = [
-  { id: "ai", name: "AI workflows", blurb: "Agents, QA, outbound, clip ops. Fewer handoffs. Same bar for sharp." },
-  { id: "lp", name: "Landing-page systems", blurb: "Ship fast. Test fast. Wire tracking so finance can read it." },
-  { id: "paid", name: "Paid acquisition", blurb: "Meta, TikTok, Google, X. CPC, CTR, CPL, ROAS. Post-click reality." },
-  { id: "content", name: "Content pipelines", blurb: "Volume that compounds. Editors, hooks, cadence, posting discipline." },
-  { id: "x", name: "X infrastructure", blurb: "Trending as logistics. Accounts, timing, geo, languages." },
-  { id: "creators", name: "Creator distribution", blurb: "Scale personalities into brands when the feed is the channel." },
-  { id: "sql", name: "SQL + analytics", blurb: "GBQ, Looker, Python when the answer has to hit money or minutes." },
-  { id: "auto", name: "Automation systems", blurb: "Orchestration that removes calendar, not adds dashboards." },
-  { id: "outreach", name: "Outreach engines", blurb: "Cold and warm at volume with deliverability and creative discipline." },
-  { id: "crypto", name: "Crypto marketing", blurb: "Launches where attention and liquidity share one clock." },
+/** Tools page: flat list */
+export const TOOLS_AND_SYSTEMS = [
+  "SQL",
+  "GBQ",
+  "Looker",
+  "Power BI",
+  "Python",
+  "Meta Ads",
+  "TikTok Ads",
+  "Google Ads",
+  "X Ads",
+  "AI landing page systems",
+  "Outbound automation",
+  "Clip pipelines",
+  "Creator distribution systems",
 ];
+
+/** Legacy: capabilities grid can still import */
+export const CAPABILITIES = TOOLS_AND_SYSTEMS.map((name, i) => ({
+  id: `t-${i}`,
+  name,
+  blurb: "Used across analytics, paid acquisition, and growth projects.",
+}));
 
 export const INTEL_PROMPTS = [
-  "What did Nick build at MarketWise?",
-  "How did Nick scale clipping teams?",
-  "What tools does Nick use?",
-  "How can I contact Nick?",
+  "What did Nick do at MarketWise?",
+  "What tools does Nick use for analytics and paid media?",
+  "Summarize Nick's experience at Minute Growth.",
+  "How do I contact Nick?",
 ];
 
-export const MOCK_AI_DEFAULT = "Ask a direct question. This is a demo layer with short answers.";
+export const MOCK_AI_DEFAULT =
+  "Ask a specific question about Nick's career, work history, tools, or projects. I only answer from that information.";
+
+export const AI_ASSISTANT_INTRO =
+  "I answer from Nick's resume and project data only: roles, metrics, tools, paid media, and how to contact him. Ask something specific.";
 
 export const PHONE_DISPLAY = "917-618-1834";
+export const PHONE_RAW = "9176181834";
 export const PHONE_HREF = "tel:+19176181834";
 export const EMAIL_ADDRESS = "npink@bu.edu";
 export const LINKEDIN = "https://linkedin.com/in/nicholaspink";
 export const EMAIL = `mailto:${EMAIL_ADDRESS}`;
 
+const TOOLS_ANSWER = `Nick has used SQL, GBQ, Looker, Power BI, and Python on analytics work. On acquisition he has run Meta Ads, TikTok Ads, Google Ads, and X Ads, plus AI-assisted landing page workflows, outbound automation, clip pipelines, and creator distribution systems across campaigns.`;
+
 export function getMockAiReply(text) {
   const q = text.trim().toLowerCase();
   if (!q) return MOCK_AI_DEFAULT;
-  if (/contact|phone|email|reach|call|dm|linkedin/i.test(q)) {
-    return `Phone ${PHONE_DISPLAY}. Email ${EMAIL_ADDRESS}. LinkedIn: ${LINKEDIN.replace("https://", "")}`;
+
+  if (
+    /\b(sex|porn|nsfw|nude|naked)\b/i.test(q) ||
+    /\b(roleplay|rp\b|pretend you|write a poem|joke|funny story)\b/i.test(q) ||
+    /\b(trump|biden|election|republican|democrat|politic)\b/i.test(q) ||
+    /\b(religion|god|prayer)\b/i.test(q)
+  ) {
+    return "I only answer questions about Nick's career, marketing work, tools, and how to contact him. Please rephrase.";
   }
-  if (/tool|stack|sql|looker|gbq|python|meta|tiktok/i.test(q)) {
-    return "SQL, GBQ, Looker, Power BI, Python when analytics has to land in savings or revenue. Paid stack is whatever clears CPX for the account. Creative ops: editors, hooks, cadence, clip pipelines.";
+
+  if (/^(hi|hey|hello|yo)\b[!.\s]*$/i.test(q.trim())) {
+    return "Ask about MarketWise, Minute Growth, paid media, tools, or how to reach Nick on LinkedIn.";
   }
-  if (/marketwise|clip|mktw|scale|views/i.test(q)) {
-    return "At MarketWise: clipping systems, paid acquisition, AI landing-page workflows, creator growth. Cut LP production from about three weeks to under 48 hours. 2.6M+ organic views in twelve days on strong runs.";
+
+  if (/\b(motivat|inspir|life advice|what is meaning)\b/i.test(q)) {
+    return "I stick to resume and work topics. Ask about a role, a metric, or a channel.";
   }
-  if (/clip|team|editor|cadence/i.test(q)) {
-    return "Scaling clips is throughput: hook testing, editor bench, posting cadence, paid to push what already wins. Rank follows ops, not vibes.";
+
+  if (/\b(contact|email|phone|linkedin|reach you|dm)\b/i.test(q)) {
+    return `Best first touch is LinkedIn: ${LINKEDIN.replace("https://", "")}. Phone ${PHONE_DISPLAY}. Email ${EMAIL_ADDRESS}.`;
   }
-  if (/kishu|meme|mc|2b|coin/i.test(q)) {
-    return "Parallel lanes: community, venues, feed pressure. Same-night coherence between OOH and the timeline.";
+
+  if (/\b(what tools|stack|sql|gbq|looker|power bi|python|meta ads|tiktok ads|google ads|x ads|analytics stack)\b/i.test(q)) {
+    return TOOLS_ANSWER;
   }
-  if (/paid|organic|together/i.test(q)) {
-    return "Organic exposes hooks. Paid buys the window before the moment goes cold.";
+
+  if (/\b(marketwise|mktw|public company|financial media|clipping|landing page)\b/i.test(q)) {
+    return "At MarketWise Nick led social and digital growth for a public financial media company: organic content, paid social, clipping teams, creator strategy, and AI-assisted landing page workflows. Outcomes included 2.6M+ organic views in 12 days, $0.04-$0.08 CPC on X, about 10% CTR on strong Meta units, and landing page builds under 48 hours versus roughly three weeks before.";
   }
-  if (/trend|twitter|x\b|hashtag/i.test(q)) {
-    return "Accounts, cadence, geo windows, languages, and knowing what the timeline is already chewing on.";
+
+  if (/\b(minute growth|minute|outbound|15k|240 accounts|roas)\b/i.test(q)) {
+    return "At Minute Growth (Dec 2023 - Aug 2025) Nick ran marketing operations: roughly $100K-$250K+ monthly ad spend, 4.25x ROAS, sub-$0.10 CPC, 15,000+ personalized emails per month, and 240+ accounts supported, plus creator partnerships, X trending, and OOH tied to digital funnels.";
   }
-  if (/ooh|times|square|taxi/i.test(q)) {
-    return "OOH is inventory: routes, screens, dates. Brief with geography and dates if you want a real quote.";
+
+  if (/\b(wayfair|analyst|savings|1\.5m|fulfillment)\b/i.test(q)) {
+    return "At Wayfair Nick worked as a data analyst on operational analytics tied to about $1.5M in savings. He learned SQL, GBQ, Looker, Power BI, and Python and shipped reporting that held up in production.";
   }
-  return MOCK_AI_DEFAULT;
+
+  if (/\b(boston|bu\b|questrom|nxtlvl|college|degree)\b/i.test(q)) {
+    return "Nick graduated from Boston University Questrom (2021-2025) with a BSBA focused on finance and entrepreneurship. He started NxtLvl AdVentures while still in school and ran client-facing growth work alongside classes.";
+  }
+
+  if (/\b(zeta|segmentation|dashboard)\b/i.test(q)) {
+    return "At Zeta Global Nick worked on marketing analytics: SQL, segmentation, dashboards, and campaign analysis on large marketing datasets.";
+  }
+
+  if (/\b(kishu|meme|coin|crypto launch|times square)\b/i.test(q)) {
+    return "Nick supported marketing for the KISHU launch window: community growth, X trending support, and Times Square placement, during a run that reached $2B+ peak market cap.";
+  }
+
+  if (/\b(paid|cpc|ctr|cpl|meta|tiktok|google ads)\b/i.test(q)) {
+    return "Nick has built paid campaigns across Meta, TikTok, Google, and X. Representative benchmarks from his work include 4.25x ROAS, $0.04-$0.08 CPC, 4-10% CTR, and sub-$10 CPL on strong units, with testing structured around hooks and conversion paths.";
+  }
+
+  if (/\b(ooh|out of home|billboard|taxi|led truck)\b/i.test(q)) {
+    return "Nick has worked on Times Square billboards, NYC taxi campaigns, LED trucks, and other OOH placements tied to digital funnels, including roughly $1.2M+ in high-ticket revenue attributed to that work in relevant reporting windows.";
+  }
+
+  if (/\b(resume|cv|job|hire|experience|career timeline)\b/i.test(q)) {
+    return "Timeline: Boston University (2021-2025, NxtLvl started while in school), Wayfair data analyst (2024), Minute Growth marketing operations (Dec 2023 - Aug 2025), Zeta marketing analyst (2025), MarketWise social and digital lead (Sep 2025 - May 2026). Ask about any stop for specifics.";
+  }
+
+  return "I can answer from Nick's resume and projects: roles at MarketWise, Minute Growth, Wayfair, Zeta, BU, tools, paid media, OOH, or KISHU. Ask a narrower question for a precise answer.";
 }
 
-/** Legacy exports for older imports */
 export const WORK_CATEGORIES = [];
 export const CAREER_RAIL = [];
 export const TIMELINE = [];
 export const SERVICES_PILLARS = CAPABILITIES.map((c) => ({ id: c.id, n: c.name, outcome: c.blurb, hot: false }));
 
 export const OOH = [
-  { label: "$KISHU", sub: "Times Square, NYC", bg: "linear-gradient(145deg,#1a0a12,#0a0a0a)" },
-  { label: "Minute Growth", sub: "NYC taxi network", bg: "linear-gradient(145deg,#0a1210,#050505)" },
+  { label: "Times Square", sub: "OOH", bg: "linear-gradient(145deg,#1a0a12,#0a0a0a)" },
+  { label: "NYC taxi", sub: "Network", bg: "linear-gradient(145deg,#0a1210,#050505)" },
 ];
 
 export const TRENDING_DATA = [
