@@ -1,26 +1,28 @@
-/** Core stats (preserved + aligned to brief) */
+/** Ticker — raw execution numbers */
 export const STATS = [
-  { v: "$2B+", l: "Crypto Market Cap Supported" },
-  { v: "103M+", l: "Snap Views in 28 Days" },
-  { v: "81.6M+", l: "IG Views in 30 Days" },
-  { v: "113x", l: "ROAS Achieved" },
-  { v: "+855%", l: "Engagement Growth" },
-  { v: "$0.04–$0.08", l: "CPC Range" },
-  { v: "$1.5M+", l: "Annual Cost Savings" },
-  { v: "240+", l: "Accounts Managed" },
-  { v: "15K+", l: "Videos / Month" },
+  { v: "2.6M", l: "organic views · 12d" },
+  { v: "$2B+", l: "crypto MC supported" },
+  { v: "15K+", l: "videos / mo" },
+  { v: "113x", l: "ROAS" },
+  { v: "240+", l: "accounts" },
+  { v: "$0.04–$0.08", l: "CPC bands" },
+  { v: "103M+", l: "Snap · 28d" },
+  { v: "81.6M+", l: "IG · 30d" },
+  { v: "$1.5M+", l: "cost savings (Wayfair)" },
 ];
 
-export const PROOF_TILES = [
+/** Homepage floating proof — same spine, staggered in UI */
+export const HERO_LIVE_METRICS = [
+  { v: "2.6M", l: "organic views in 12 days" },
   { v: "$2B+", l: "crypto market cap supported" },
-  { v: "103M+", l: "Snap views in 28 days" },
-  { v: "81.6M+", l: "IG views in 30 days" },
-  { v: "113x", l: "ROAS Achieved" },
-  { v: "$1.5M+", l: "annual cost savings" },
   { v: "15K+", l: "videos / month" },
-  { v: "$0.04–$0.08", l: "CPC" },
-  { v: "<48h", l: "funnel build time" },
+  { v: "113x", l: "ROAS" },
+  { v: "240+", l: "accounts managed" },
+  { v: "TSQ + X", l: "trending + OOH infra" },
+  { v: "$0.04–$0.08", l: "CPC campaigns" },
 ];
+
+export const PROOF_TILES = HERO_LIVE_METRICS;
 
 export const CLIENTS = [
   { name: "Netflix", color: "#E50914" },
@@ -31,88 +33,74 @@ export const CLIENTS = [
   { name: "YoungLA", color: "#E8E8FF" },
   { name: "Buffalo Wild Wings", color: "#E8A000" },
   { name: "Morgan & Morgan", color: "#E8E8FF" },
-  { name: "$KISHU", color: "#FFBAD4" },
-  { name: "$SAMO", color: "#5CE1E6" },
-  { name: "Book of Meow", color: "#FFBAD4" },
+  { name: "$KISHU", color: "#7dd3c0" },
+  { name: "$SAMO", color: "#7ab6ff" },
+  { name: "Book of Meow", color: "#c4b5fd" },
+];
+
+export const HOME_SNIPPETS = [
+  { k: "Now", line: "MarketWise · NASDAQ-adjacent media. Clipping systems, paid, funnels—velocity over slides.", to: "timeline" },
+  { k: "Crypto", line: "$KISHU to $2B+ MC in 60d. Launch wasn’t vibes—it was coordinated attention + liquidity.", to: "work" },
+  { k: "Ops", line: "Minute Growth: six-figure OOH, 240+ accounts, automations that actually ship.", to: "timeline" },
 ];
 
 export const WORK_LEGACY = [
-  { co: "$KISHU Launch", tag: "Crypto", result: "$2B+ market cap · 60 days", desc: "Supported the full marketing launch of $KISHU — narrative, community, global Twitter trending, and Times Square billboard. $2B+ market cap in 60 days — one of the fastest climbs to that level in crypto history.", year: "2021" },
-  { co: "MarketWise", tag: "Growth · AI", result: "+855% engagement · 1 quarter", desc: "Built AI-powered content engine for a NASDAQ-listed financial media company. Took weekly views from 4,000 to 2.6 million in 12 days using engineered clip distribution systems.", year: "2025–26" },
-  { co: "Minute Growth", tag: "Paid · OOH", result: "$1.2M+ high-ticket revenue", desc: "Managed $250k/mo across Meta, TikTok, Google. Brokered six-figure Times Square placements, ran NYC taxi digital network, and deployed LED media trucks across custom routes.", year: "2025" },
-  { co: "$SAMO + $LINEO", tag: "Crypto · Twitter", result: "Trending in 4+ countries at once", desc: "$SAMO hit #1 Germany, #2 UK, #3 Brazil, #4 US in a single campaign. $LINEO trending in Turkey, India, and Brazil simultaneously — all within hours of launch.", year: "2024" },
+  { co: "$KISHU", tag: "Launch", result: "$2B+ MC · 60d", desc: "Narrative, community, X trending, Times Square. When the feed moves, liquidity follows—if you engineered the pressure right.", year: "2021" },
+  { co: "MarketWise", tag: "MKTW", result: "2.6M views · 12d", desc: "Turned a quiet financial feed into a clip machine. AI-assisted workflows + distribution discipline—not ‘content strategy,’ throughput.", year: "2025–26" },
+  { co: "Minute Growth", tag: "Ops", result: "$1.2M+ OOH-led revenue", desc: "Paid at scale, taxi networks, LED routes, creators. If it doesn’t reconcile to pipeline, I don’t pretend it worked.", year: "2025" },
+  { co: "$SAMO / $LINEO", tag: "X", result: "Multi-country #1–#6", desc: "Same-night trending across DE/UK/BR/US and TR/IN/BR. Launch windows are violent—your stack has to keep up.", year: "2024" },
 ];
 
 export const WORK_CATEGORIES = [
   {
     id: "twitter",
-    headline: "Twitter / X Trending",
-    angle: "Global trend creation across multiple countries.",
-    metrics: "Multi-market #1–#6 placements alongside major cultural moments.",
+    headline: "X trending",
+    angle: "Manufacture velocity in the feed when the clock starts.",
+    metrics: "Multi-region placements in hours, not ‘campaign weeks.’",
     visual: "twitter",
-    summary: "$SAMO trended #1 Germany, #2 UK, #3 Brazil, #4 US simultaneously. $LINEO trended Turkey, India, and Brazil.",
-    bullets: [
-      "$SAMO: #1 DE, #2 UK, #3 BR, #4 US in one window.",
-      "$LINEO: coordinated trending in TR, IN, BR.",
-      "Built repeatable systems for launch-hour velocity.",
-    ],
+    summary: "$SAMO: #1 DE, #2 UK, #3 BR, #4 US same window. $LINEO: TR / IN / BR. Cultural noise is cover—rank is signal.",
+    bullets: ["Volume + timing beats ‘organic hope.’", "Built for launch-night chaos.", "Case deck: on request."],
   },
   {
     id: "crypto",
-    headline: "Crypto Launches",
-    angle: "Launch systems that manufacture attention, liquidity, and narrative velocity.",
-    metrics: "$2B+ MC — $KISHU in 60 days.",
+    headline: "Token launches",
+    angle: "Attention → liquidity. Liquidity → narrative. Loop it fast.",
+    metrics: "$2B+ MC · $KISHU · 60d",
     visual: "crypto",
-    summary: "Supported $KISHU to $2B+ market cap in 60 days — Times Square, narrative, community, and Twitter trending in lockstep.",
-    bullets: [
-      "Narrative + community + distribution in parallel.",
-      "OOH + X trending + creator velocity.",
-      "View Proof / Case Study — placeholder for deep dive.",
-    ],
+    summary: "Community, OOH, X, creators—parallel lanes. If your launch reads like a PDF, you already lost.",
+    bullets: ["MC motion in 60d window.", "OOH + feed coordination.", "Deep dive: placeholder."],
   },
   {
     id: "paid",
-    headline: "Paid Acquisition",
-    angle: "Low-cost acquisition engines across Meta, TikTok, Google, and X.",
+    headline: "Paid acquisition",
+    angle: "Buy attention like inventory. Optimize like a quant.",
     metrics: "$0.04–$0.08 CPC · 4–10% CTR · sub-$10 CPL · 113x ROAS.",
     visual: "paid",
-    summary: "Scaled spend with efficiency: CPC bands, strong CTR, ROAS that holds at real budgets.",
-    bullets: [
-      "Managed $100K–$250K+ monthly ad spend (Minute Growth).",
-      "Campaign-level proof available on request.",
-      "View Proof / Case Study — placeholder.",
-    ],
+    summary: "Meta / TikTok / Google / X. I care about marginal CPX and what happens after the click—not dashboard theater.",
+    bullets: ["$100K–$250K+ / mo historically.", "Proof tables: on request.", "No ‘brand lift’ hand-waving."],
   },
   {
     id: "ooh",
-    headline: "OOH / Real-World Distribution",
-    angle: "Times Square, taxi screens, LED trucks, building projections.",
-    metrics: "$1.2M+ high-ticket revenue through OOH + integrated funnels.",
+    headline: "OOH + physical reach",
+    angle: "TSQ, taxis, LED trucks, projections—real pixels, real cities.",
+    metrics: "$1.2M+ high-ticket revenue tied to OOH + funnels.",
     visual: "ooh",
-    summary: "Manufactured cultural moments with measurable downstream revenue.",
-    bullets: [
-      "Times Square, taxi networks, LED routes, projections.",
-      "Integrated funnels so OOH converts, not just flexes.",
-      "View Proof / Case Study — placeholder.",
-    ],
+    summary: "Culture moments that also route to pipeline. Billboards aren’t ego if the URL and the story match.",
+    bullets: ["Integrated routes + screens.", "Funnels that catch the spike.", "Specs: email."],
   },
   {
     id: "ai",
-    headline: "AI Systems",
-    angle: "AI workflows that cut production time and scale execution.",
-    metrics: "15K+ emails/mo · <48h funnels · 2.6M+ organic views in 12 days.",
+    headline: "AI systems",
+    angle: "Agents, automations, clip pipelines—speed without turning quality into mush.",
+    metrics: "15K+ emails / mo · funnels <48h · 2.6M+ views / 12d",
     visual: "ai",
-    summary: "Automailer, clipping systems, funnel stacks — engineered for throughput.",
-    bullets: [
-      "15K+ personalized emails/month.",
-      "Landing pages: ~3 weeks → <48 hours.",
-      "AI clipping teams: 2.6M+ organic views in 12 days.",
-    ],
+    summary: "Automailer, clipping stacks, funnel factories. If it doesn’t cut calendar time, it’s not a system.",
+    bullets: ["Personalized outbound at volume.", "LP build: weeks → <48h.", "Clipping: engineered spikes."],
   },
 ];
 
 export const OOH = [
-  { label: "$KISHU", sub: "Times Square, NYC", bg: "linear-gradient(145deg,#0099cc,#005fa3)" },
+  { label: "$KISHU", sub: "Times Square, NYC", bg: "linear-gradient(145deg,#0c4a6e,#020617)" },
   { label: "Brent Faiyaz", sub: "Philadelphia Wrapped Building", bg: "linear-gradient(145deg,#1a1a2e,#2d2d5e)" },
   { label: "Brent Faiyaz", sub: "Las Vegas Strip · LED Truck", bg: "linear-gradient(145deg,#3d0a0a,#8b0000)" },
   { label: "Mogul", sub: "Building Projection · Miami", bg: "linear-gradient(145deg,#1a2a00,#3d6600)" },
@@ -121,7 +109,7 @@ export const OOH = [
 ];
 
 export const TRENDING_DATA = [
-  { project: "$SAMO", desc: "Trended globally in one campaign window alongside Taylor Swift and #SpotifyWrapped",
+  { project: "$SAMO", desc: "Single window vs Wrapped + stadium-tier noise",
     countries: [
       { flag: "🇩🇪", name: "Germany", pos: "#1", next: "#SpotifyWrapped" },
       { flag: "🇬🇧", name: "United Kingdom", pos: "#2", next: "#SpotifyWrapped" },
@@ -129,7 +117,7 @@ export const TRENDING_DATA = [
       { flag: "🇺🇸", name: "United States", pos: "#4", next: "#CUTOSHI" },
     ],
   },
-  { project: "$LINEO", desc: "Coordinated multi-market launch trending across Europe, Asia, and South America",
+  { project: "$LINEO", desc: "TR / IN / BR same night—different languages, same playbook",
     countries: [
       { flag: "🇹🇷", name: "Turkey", pos: "#1", next: "#AliKocIstifa" },
       { flag: "🇮🇳", name: "India", pos: "#3", next: "#MondayMotivation" },
@@ -146,62 +134,11 @@ export const PAID_CAMPAIGNS = [
 ];
 
 export const SERVICES_PILLARS = [
-  { id: "ai", n: "AI Marketing Systems", outcome: "Throughput: outbound, clipping, funnels — built to scale without headcount inflation.", hot: true },
-  { id: "paid", n: "Paid Acquisition", outcome: "Efficient reach on Meta, TikTok, Google, and X — CPC, CTR, CPL, ROAS under control.", hot: false },
-  { id: "x", n: "Twitter / X Trending", outcome: "Multi-country trending velocity for launches, narratives, and cultural moments.", hot: true },
-  { id: "ooh", n: "OOH + Cultural Moments", outcome: "Times Square to transit to LED — moments that earn attention and convert.", hot: false },
-  { id: "dist", n: "Content Distribution Infrastructure", outcome: "Clipping, accounts, and volume systems — millions of views, thousands of assets/month.", hot: false },
-];
-
-/** Synthetic social proof — no video assets; company-only rows where noted */
-export const TESTIMONIALS = [
-  {
-    quote:
-      "We needed velocity, not decks. Nick’s team wired paid, creators, and distribution so efficiently that our cost per qualified lead dropped sharply while volume climbed. It felt less like ‘marketing’ and more like a tuned growth engine.",
-    from: "Kick.com",
-    kind: "company",
-  },
-  {
-    quote:
-      "For high-stakes campaigns, clarity and execution matter. Nick’s systems tightened our funnel reporting, improved handoffs between media and creative, and helped us reinvest budget where it actually moved cases. The efficiency gains were obvious within weeks.",
-    from: "Morgan & Morgan",
-    kind: "company",
-  },
-  {
-    quote:
-      "We experimented with AI agents for outbound and content QA — Nick helped us keep quality high while 10x’ing throughput. Replies got faster, variants got smarter, and nothing felt spammy.",
-    from: "Elena Park",
-    kind: "person",
-    subtitle: "Marketing Operations",
-  },
-  {
-    quote:
-      "We used to think ‘going viral’ was luck. Nick showed us the buy side: coordinated bursts, clean tracking, and narrative hooks that actually match the algorithm. We paid for reach and still earned organic lift.",
-    from: "Marcus Webb",
-    kind: "person",
-    subtitle: "Creator Partnerships",
-  },
-  {
-    quote:
-      "Our paid social was fine on paper and weak in practice. Nick rebuilt audiences, tightened creative testing, and cut wasted spend without killing scale. ROAS and CTR both moved in the right direction immediately.",
-    from: "Sofia Nguyen",
-    kind: "person",
-    subtitle: "Head of Performance",
-  },
-  {
-    quote:
-      "Nick’s AI-assisted workflows cut our production calendar in half — briefs, variants, and QA all got cheaper in time, not quality. The team finally had bandwidth to think instead of copy-pasting.",
-    from: "Daniel Ortiz",
-    kind: "person",
-    subtitle: "Growth Lead, B2B SaaS",
-  },
-  {
-    quote:
-      "We wanted cultural heat, not a billboard vanity metric. Nick connected OOH, social spikes, and landing experiences so the spend actually fed the funnel. Best money we’ve spent on awareness that converted.",
-    from: "Avery Collins",
-    kind: "person",
-    subtitle: "Brand Director",
-  },
+  { id: "ai", n: "AI execution layer", outcome: "Agents, outbound, QA, clip ops—fewer humans in the loop, same bar for sharp.", hot: true },
+  { id: "paid", n: "Paid + measurement", outcome: "Buy reach like a trader. CPC/CTR/CPL/ROAS are the language.", hot: false },
+  { id: "x", n: "X / trending infrastructure", outcome: "Rank is a product. Treat the feed like infrastructure, not a wish.", hot: true },
+  { id: "ooh", n: "OOH + city-scale stunts", outcome: "Screens you can’t scroll past. Tie them to URLs and narrative.", hot: false },
+  { id: "dist", n: "Creator + clip distribution", outcome: "Volume that compounds—accounts, editors, hooks, posting cadence.", hot: false },
 ];
 
 export const TIMELINE = [
@@ -209,11 +146,12 @@ export const TIMELINE = [
     id: "bu",
     range: "2021–2024",
     title: "BSBA",
-    org: "Boston University · Questrom School of Business",
+    org: "Boston University · Questrom",
     visual: "bu",
-    focus: "Finance, business, entrepreneurship — built NxtLvl from campus.",
+    viz: "sql",
+    focus: "Finance + entrepreneurship. Started building NxtLvl before the cap and gown mattered.",
     metrics: [],
-    detail: "Undergraduate foundation in finance and business building; agency origin story starts here.",
+    detail: "Where the operator muscle started: models, markets, and actually running a business on campus—not case competitions.",
   },
   {
     id: "nxtlvl",
@@ -221,9 +159,10 @@ export const TIMELINE = [
     title: "Founder",
     org: "NxtLvl AdVentures",
     visual: "startup",
-    focus: "Built and exited marketing agency from college dorm.",
-    metrics: ["$100K+ revenue", "3.6x ROAS campaigns", "+60% client audience growth in 90 days", "+22% funnel conversion improvements"],
-    detail: "End-to-end growth work for clients: paid, creative, and funnel iteration — scaled from dorm to exit.",
+    viz: "dorm",
+    focus: "Agency out of a dorm. Real clients, real invoices, real exit.",
+    metrics: ["$100K+ revenue", "3.6x ROAS on paid", "+60% audience in 90d", "+22% funnel lift"],
+    detail: "Learned to sell, deliver, and fire myself from the bottleneck. Crypto + paid + creators—messy, fast, useful.",
   },
   {
     id: "wayfair",
@@ -231,61 +170,73 @@ export const TIMELINE = [
     title: "Data Analyst",
     org: "Wayfair",
     visual: "analytics",
-    focus: "Analytics engineering and cost optimization.",
-    metrics: ["$1.5M+ annual cost savings", "100% resolution rate across incident pipelines", "Self-taught SQL + BigQuery"],
-    detail: "Incident analytics, stakeholder reporting, and measurable operational savings.",
+    viz: "warehouse",
+    focus: "SQL + BigQuery. Incidents, savings, zero hand-wavy charts.",
+    metrics: ["$1.5M+ annual savings", "100% incident resolution pipeline", "Self-taught SQL → prod"],
+    detail: "If your query doesn’t hit money or minutes, I don’t ship it. Analytics as leverage, not astrology.",
   },
   {
     id: "minute",
     range: "Jan 2025 – Aug 2025",
-    title: "Marketing Operations Manager",
+    title: "Marketing Ops",
     org: "Minute Growth",
     visual: "growth",
-    focus: "High-velocity paid + OOH + creator systems.",
-    metrics: ["$100K–$250K+ monthly ad spend", "113x ROAS", "sub-$0.10 CPC", "8%+ CTR", "$1.2M+ high-ticket OOH revenue", "15K+ videos/month across 240+ accounts", "Managed creators with 25M+ Instagram followers", "AI automailer, Twitter trending systems, funnel stacks"],
-    detail: "Owned media ops across platforms, brokered OOH, and shipped AI/automation where speed mattered.",
+    viz: "billboard",
+    focus: "Paid at scale, OOH that clears, creators under contract.",
+    metrics: ["$100K–$250K+ / mo spend", "113x ROAS", "sub-$0.10 CPC", "8%+ CTR", "$1.2M+ OOH-led revenue", "15K+ videos / mo · 240+ accts", "25M+ IG followers managed", "AI mailer + X stacks"],
+    detail: "Where ‘growth’ stops being a LinkedIn word: routes, screens, spend, and reconciling all three.",
   },
   {
     id: "zeta",
     range: "Jun 2025 – Aug 2025",
-    title: "Marketing Analyst (Contract)",
+    title: "Marketing Analyst · contract",
     org: "Zeta Global",
     visual: "cdp",
-    focus: "SQL, Tableau, BI — portfolio and segmentation depth.",
-    metrics: ["Analyzed $10K–$150K+ monthly media portfolios", "Segmentation across millions of user records", "Predictive models and SFTP data pipelines"],
-    detail: "Contract analytics supporting enterprise marketing intelligence.",
+    viz: "segment",
+    focus: "Enterprise CDP energy—segments, pipelines, models.",
+    metrics: ["$10K–$150K+ / mo books analyzed", "Millions of rows segmented", "Predictive + SFTP feeds"],
+    detail: "Bigco data hygiene: boring on the surface, expensive if you get it wrong.",
   },
   {
     id: "marketwise",
     range: "Sep 2025 – Present",
-    title: "Social Media & Digital Marketing Lead",
-    org: "MarketWise (NASDAQ: MKTW)",
+    title: "Social + Digital Lead",
+    org: "MarketWise · NASDAQ: MKTW",
     visual: "market",
-    focus: "Organic + paid systems for a public financial media brand.",
-    metrics: ["+163% Instagram impressions", "+855% engagements", "+1,028% net followers", "2.6M+ organic views in 12 days", "$0.04–$0.08 CPC", "4–10% CTR", "sub-$10 CPL", "Creator accounts scaled ~200% follower growth/month avg.", "Funnel build: ~3 weeks → <48h"],
-    detail: "Lead digital growth: content systems, acquisition efficiency, and funnel velocity at scale.",
+    viz: "clips",
+    focus: "Public-market media + creator velocity. Clips, paid, funnels—same scoreboard.",
+    metrics: ["+163% IG impressions", "+855% engagements", "+1,028% net followers", "2.6M+ organic views · 12d", "$0.04–$0.08 CPC", "4–10% CTR", "sub-$10 CPL", "~200% follower growth / mo avg", "Funnel build: weeks → <48h"],
+    detail: "If the chart doesn’t move when you post, your system is decoration. I build the machine behind the posts.",
   },
 ];
 
-export const MOCK_AI_DEFAULT = "I’m a demo assistant — answers below are curated from Nick’s public portfolio data. For real scope, email npink@bu.edu.";
+export const INTEL_PROMPTS = [
+  "What broke at MarketWise?",
+  "Explain X trending like I’m technical.",
+  "Crypto launch: what actually moved?",
+  "Stack AI + paid without cringe?",
+];
+
+export const MOCK_AI_DEFAULT =
+  "Demo layer—answers are hard-coded from Nick’s real work. Want specifics? npink@bu.edu. Want vibes? Wrong site.";
 
 export function getMockAiReply(text) {
   const q = text.trim().toLowerCase();
   if (!q) return MOCK_AI_DEFAULT;
-  if (/biggest win|largest win|top win|what.*win|nick.*win/i.test(q)) {
-    return "Nick’s headline wins stack: supporting $KISHU to $2B+ market cap in ~60 days, and $SAMO trending #1 DE / #2 UK / #3 BR / #4 US simultaneously. Distribution + narrative at global scale.";
+  if (/biggest|win|kishu|sam|mc|2b/i.test(q)) {
+    return "$KISHU → $2B+ MC in ~60d. $SAMO ranked #1 DE / #2 UK / #3 BR / #4 US same window. That’s feed pressure + OOH + community in parallel—not a thread.";
   }
-  if (/trend|twitter|x\b|hashtag/i.test(q)) {
-    return "Yes — trending is a core capability. Nick has coordinated multi-country X trending for launches like $SAMO and $LINEO. Timing, volume, and narrative alignment matter; he builds for launch-hour velocity.";
+  if (/trend|twitter|x\b|hashtag|rank/i.test(q)) {
+    return "Trending is logistics: accounts, cadence, geo windows, and knowing what the timeline is already chewing on. I’ve run multi-country stacks for $SAMO, $LINEO, and launch nights that don’t get a second chance.";
   }
-  if (/ooh|outdoor|times square|cost|price/i.test(q)) {
-    return "OOH is quoted per market, format, and flight — Times Square, taxi networks, LED trucks, and projections each price differently. Nick has driven $1.2M+ high-ticket revenue through OOH + integrated funnels. Email npink@bu.edu with geography + dates for a real range.";
+  if (/ooh|times|square|taxi|led|cost|price/i.test(q)) {
+    return "OOH is inventory: screens, routes, flights. I’ve brokered TSQ, taxi nets, trucks. Pricing is geography + dates—email npink@bu.edu with both. $1.2M+ OOH-attributed revenue is the number I care about.";
   }
-  if (/marketwise|mktw/i.test(q)) {
-    return "At MarketWise Nick leads social + digital marketing: +163% IG impressions, +855% engagements, +1,028% net followers, 2.6M+ organic views in 12 days, efficient CPC/CTR/CPL bands, and funnel build time cut from ~3 weeks to <48h.";
+  if (/marketwise|mktw|clip|view/i.test(q)) {
+    return "MarketWise: clip + paid + funnel velocity. 2.6M organic views in 12d, +163% impressions, +855% engagements, funnels from weeks to <48h. Public-market audience, creator-era tactics.";
   }
-  if (/ai system|automailer|clip|funnel|48|email/i.test(q)) {
-    return "Nick builds AI marketing systems: e.g. 15K+ personalized emails/month, landing/funnel stacks in <48h vs ~3 weeks prior, and AI-assisted clipping workflows (2.6M+ organic views in 12 days in the MarketWise chapter).";
+  if (/ai|agent|auto|mail|funnel|48|email|clip/i.test(q)) {
+    return "AI here = throughput: 15K+ personalized emails/mo, clip pipelines, funnel builds in <48h. If it doesn’t delete calendar, it’s ChatGPT cosplay.";
   }
   return MOCK_AI_DEFAULT;
 }

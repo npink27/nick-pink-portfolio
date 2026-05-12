@@ -1,6 +1,16 @@
-import HeroCanvas from "../components/HeroCanvas";
-import ContactCTA from "../components/ContactCTA";
-import { CLIENTS, LINKEDIN, PROOF_TILES, STATS, TESTIMONIALS } from "../data/siteData";
+import { motion } from "framer-motion";
+import HeroCanvas from "../components/HeroCanvas.jsx";
+import HeroIntelPanel from "../components/HeroIntelPanel.jsx";
+import DistributionMesh from "../components/DistributionMesh.jsx";
+import ContactCTA from "../components/ContactCTA.jsx";
+import { CLIENTS, HERO_LIVE_METRICS, HOME_SNIPPETS, LINKEDIN, STATS } from "../data/siteData.js";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-40px" },
+  transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
+};
 
 export default function Home({ setPage }) {
   return (
@@ -9,25 +19,61 @@ export default function Home({ setPage }) {
         <HeroCanvas />
         <div className="hero-glow" />
         <div className="hero-fade" />
-        <div className="hero-content">
-          <div className="hero-label">
-            <span className="hero-label-dot" />
-            GROWTH · AI SYSTEMS · DISTRIBUTION
-          </div>
-          <h1 className="hero-name">
-            NICK
-            <br />
-            <em>PINK</em>
-          </h1>
-          <p className="hero-tagline">Growth marketer, AI systems operator, and distribution builder.</p>
-          <div className="hero-actions">
-            <button type="button" className="btn-p" onClick={() => setPage("work")}>
-              View work
-            </button>
-            <button type="button" className="btn-g" onClick={() => setPage("ai")}>
-              Ask Nick’s AI →
-            </button>
-          </div>
+
+        <div className="hero-split">
+          <motion.div className="hero-left" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}>
+            <p className="hero-eyebrow">23 · operator · crypto-native · AI-native</p>
+            <h1 className="hero-name-xl">
+              NICK <em>PINK</em>
+            </h1>
+            <div className="hero-lines">
+              <div>
+                <strong>AI systems.</strong> Distribution. Internet leverage.
+              </div>
+              <div>Two exits. Public markets + creator economy crossover.</div>
+            </div>
+            <p className="hero-lede">
+              I build machines that buy, bend, and route attention—then make the spreadsheet reconcile. Crypto launches, X trending, paid, OOH, clip ops, automations. If it doesn’t ship, it doesn’t
+              count.
+            </p>
+            <div className="hero-actions-row">
+              <button type="button" className="btn-p" onClick={() => setPage("work")}>
+                Execution log
+              </button>
+              <button type="button" className="btn-g" onClick={() => setPage("timeline")}>
+                Career rail →
+              </button>
+              <a className="btn-g" href={LINKEDIN} target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div className="hero-right" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}>
+            <HeroIntelPanel />
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="wrap section home-metrics">
+        <motion.div {...fadeUp}>
+          <p className="s-label">Live proof</p>
+          <h2 className="s-h">Numbers that survived contact with reality.</h2>
+        </motion.div>
+        <div className="metric-float-grid" style={{ marginTop: 22 }}>
+          {HERO_LIVE_METRICS.map((m, i) => (
+            <motion.div
+              key={m.v + m.l}
+              className="metric-float"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{ delay: i * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="metric-float-v">{m.v}</div>
+              <div className="metric-float-l">{m.l}</div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
@@ -43,24 +89,23 @@ export default function Home({ setPage }) {
         </div>
       </div>
 
-      <div className="wrap section">
-        <span className="s-label">Proof</span>
-        <h2 className="s-h">
-          Numbers that <em>travel.</em>
-        </h2>
-        <p className="s-p">Quick proof tiles — same story, faster scan.</p>
-        <div className="proof-grid">
-          {PROOF_TILES.map((p) => (
-            <div key={p.v} className="proof-tile">
-              <div className="proof-v">{p.v}</div>
-              <div className="proof-l">{p.l}</div>
-            </div>
-          ))}
+      <section className="dist-section">
+        <div className="wrap">
+          <motion.p className="s-label" {...fadeUp}>
+            Distribution mesh
+          </motion.p>
+          <motion.h2 className="s-h" {...fadeUp}>
+            Attention is geography. <em>I map the routes.</em>
+          </motion.h2>
+          <motion.p className="s-p wide" {...fadeUp}>
+            Feed, paid, creators, cities. Same problem: compress latency between idea → pixels → pipeline. The mesh is metaphor—what’s underneath is ops.
+          </motion.p>
+          <DistributionMesh />
         </div>
-      </div>
+      </section>
 
       <div className="clients">
-        <div className="clients-label">TRUSTED BY</div>
+        <div className="clients-label">Brands / projects in orbit</div>
         <div className="clients-track">
           {[...CLIENTS, ...CLIENTS].map((c, i) => (
             <div className="cli" key={`${c.name}-${i}`}>
@@ -70,52 +115,18 @@ export default function Home({ setPage }) {
         </div>
       </div>
 
-      <div className="wrap section">
-        <div className="about-compact">
-          <div>
-            <h2 className="s-h">
-              Distribution <em>machines.</em>
-            </h2>
-            <p className="s-p wide">
-              By 23: exited an agency from a dorm room, scaled crypto to billions in market cap, and built AI systems that compress execution time at public companies. Nick engineers attention,
-              narrative, and leverage — not slide decks.
-            </p>
-            <a className="inline-link" href={LINKEDIN} target="_blank" rel="noreferrer">
-              linkedin.com/in/nicholaspink ↗
-            </a>
-          </div>
-          <div className="pill-row">
-            {[
-              ["103M+", "Snap views"],
-              ["$2B+", "Crypto supported"],
-              ["81.6M+", "IG views / 30d"],
-            ].map(([v, l]) => (
-              <div className="stat-pill" key={v}>
-                <strong>{v}</strong>
-                <span>{l}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="wrap section">
-        <span className="s-label">Clients</span>
-        <h2 className="s-h">
-          Word on the <em>street.</em>
-        </h2>
-        <div className="testi-compact">
-          {TESTIMONIALS.map((t, i) => (
-            <figure key={`testi-${i}`} className="testi-compact-card">
-              <blockquote>“{t.quote}”</blockquote>
-              <figcaption>
-                <strong>{t.from}</strong>
-                {t.kind === "person" && t.subtitle ? <span className="testi-sub">{t.subtitle}</span> : null}
-              </figcaption>
-            </figure>
+      <section className="wrap section">
+        <p className="s-label">Resume snippets</p>
+        <h2 className="s-h">Tap in. I’m not hiding the arc.</h2>
+        <div className="snip-grid" style={{ marginTop: 18 }}>
+          {HOME_SNIPPETS.map((s) => (
+            <button key={s.k} type="button" className="snip-card" onClick={() => setPage(s.to)}>
+              <div className="snip-k">{s.k}</div>
+              <div className="snip-line">{s.line}</div>
+            </button>
           ))}
         </div>
-      </div>
+      </section>
 
       <div className="wrap section section-last">
         <ContactCTA onNavigate={setPage} />

@@ -3,7 +3,7 @@ import { LINKEDIN } from "../data/siteData";
 const ITEMS = [
   { id: "home", label: "Home" },
   { id: "work", label: "Work" },
-  { id: "timeline", label: "Resume" },
+  { id: "timeline", label: "Career" },
   { id: "services", label: "Services" },
   { id: "ai", label: "Ask Nick" },
   { id: "contact", label: "Contact" },

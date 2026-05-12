@@ -8,11 +8,11 @@ export default function ServicesPage({ setPage }) {
   return (
     <div className="page">
       <div className="wrap section">
-        <span className="s-label">Services</span>
+        <p className="s-label">Capabilities</p>
         <h1 className="s-h">
-          Five <em>pillars.</em>
+          What I <em>actually ship.</em>
         </h1>
-        <p className="s-p wide">High-leverage systems — outcomes first, jargon never.</p>
+        <p className="s-p wide">Bundles, not vibes. Pick a lane—I’ve probably already run it at ugly scale.</p>
 
         <div className="svc-grid">
           {SERVICES_PILLARS.map((s, i) => (

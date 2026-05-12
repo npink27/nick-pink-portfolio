@@ -1,22 +1,22 @@
-import { EMAIL, LINKEDIN } from "../data/siteData";
+import { EMAIL, LINKEDIN } from "../data/siteData.js";
 
 export default function ContactCTA({ onNavigate }) {
   return (
-    <div className="contact-cta">
+    <div className="contact-cta glass">
       <div>
-        <div className="contact-cta-k">Ready when you are</div>
-        <div className="contact-cta-t">Contact Nick for launches, trending, paid, OOH, and AI systems.</div>
+        <div className="contact-cta-k">Ping</div>
+        <div className="contact-cta-t">Launches, X, paid, OOH, AI ops—send the actual problem.</div>
       </div>
       <div className="contact-cta-actions">
         <a className="btn-p" href={EMAIL}>
-          Contact Nick
+          Email
         </a>
         <a className="btn-g" href={LINKEDIN} target="_blank" rel="noreferrer">
           LinkedIn
         </a>
         {onNavigate && (
           <button type="button" className="btn-g" onClick={() => onNavigate("contact")}>
-            Full contact →
+            Contact grid →
           </button>
         )}
       </div>

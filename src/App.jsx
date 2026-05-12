@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./App.css";
+import "./surface.css";
 import Navigation from "./components/Navigation.jsx";
 import Home from "./pages/Home.jsx";
 import WorkPage from "./pages/WorkPage.jsx";
@@ -10,12 +11,12 @@ import AskNickPage from "./pages/AskNickPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 
 const TITLES = {
-  home: "Nick Pink | Growth, AI Systems & Distribution",
-  work: "Work · Nick Pink",
-  timeline: "Resume Timeline · Nick Pink",
-  services: "Services · Nick Pink",
-  ai: "Ask Nick’s AI · Nick Pink",
-  contact: "Contact · Nick Pink",
+  home: "Nick Pink — Operator",
+  work: "Work — Nick Pink",
+  timeline: "Career — Nick Pink",
+  services: "Capabilities — Nick Pink",
+  ai: "Intel — Nick Pink",
+  contact: "Contact — Nick Pink",
 };
 
 const pageMotion = {

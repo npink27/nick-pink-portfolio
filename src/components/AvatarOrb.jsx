@@ -1,9 +1,22 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-export default function AvatarOrb() {
+export default function AvatarOrb({ parallaxRef }) {
   const canvasRef = useRef(null);
   const wrapRef = useRef(null);
+  const mouse = useRef({ x: 0, y: 0, tx: 0, ty: 0 });
+
+  useEffect(() => {
+    const target = parallaxRef?.current ?? wrapRef.current;
+    if (!target) return;
+    const onMove = (e) => {
+      const rect = target.getBoundingClientRect();
+      mouse.current.tx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      mouse.current.ty = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    };
+    target.addEventListener("pointermove", onMove);
+    return () => target.removeEventListener("pointermove", onMove);
+  }, [parallaxRef]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -18,11 +31,11 @@ export default function AvatarOrb() {
     const core = new THREE.Mesh(
       new THREE.IcosahedronGeometry(1.05, 1),
       new THREE.MeshStandardMaterial({
-        color: 0x1a1030,
-        emissive: 0x331844,
-        emissiveIntensity: 0.6,
-        metalness: 0.35,
-        roughness: 0.45,
+        color: 0x0c1824,
+        emissive: 0x0d3d34,
+        emissiveIntensity: 0.55,
+        metalness: 0.42,
+        roughness: 0.38,
         wireframe: true,
       }),
     );
@@ -30,27 +43,29 @@ export default function AvatarOrb() {
 
     const inner = new THREE.Mesh(
       new THREE.IcosahedronGeometry(0.72, 0),
-      new THREE.MeshBasicMaterial({ color: 0xffbad4, wireframe: true, transparent: true, opacity: 0.35 }),
+      new THREE.MeshBasicMaterial({ color: 0x5eead4, wireframe: true, transparent: true, opacity: 0.28 }),
     );
     scene.add(inner);
 
     const pts = new THREE.Points(
       new THREE.BufferGeometry().setFromPoints(
-        Array.from({ length: 220 }, () => new THREE.Vector3((Math.random() - 0.5) * 3.2, (Math.random() - 0.5) * 3.2, (Math.random() - 0.5) * 3.2)),
+        Array.from({ length: 200 }, () => new THREE.Vector3((Math.random() - 0.5) * 3.2, (Math.random() - 0.5) * 3.2, (Math.random() - 0.5) * 3.2)),
       ),
-      new THREE.PointsMaterial({ color: 0xa78bfa, size: 0.028, transparent: true, opacity: 0.55 }),
+      new THREE.PointsMaterial({ color: 0x7ab6ff, size: 0.026, transparent: true, opacity: 0.5 }),
     );
     scene.add(pts);
 
-    const amb = new THREE.AmbientLight(0xffffff, 0.35);
-    const dir = new THREE.DirectionalLight(0xffbad4, 0.9);
+    const amb = new THREE.AmbientLight(0xffffff, 0.32);
+    const dir = new THREE.DirectionalLight(0x5eead4, 0.85);
     dir.position.set(2, 3, 4);
-    scene.add(amb, dir);
+    const fill = new THREE.DirectionalLight(0x7ab6ff, 0.35);
+    fill.position.set(-3, -1, 2);
+    scene.add(amb, dir, fill);
 
     let id;
     let t = 0;
     const resize = () => {
-      const s = Math.min(wrap.clientWidth, 340);
+      const s = Math.min(wrap.clientWidth, 320);
       renderer.setSize(s, s);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       camera.aspect = 1;
@@ -60,13 +75,20 @@ export default function AvatarOrb() {
     const loop = () => {
       id = requestAnimationFrame(loop);
       t += 0.016;
-      const breathe = 1 + Math.sin(t * 0.9) * 0.04;
-      core.rotation.x += 0.004;
-      core.rotation.y += 0.0065;
+      mouse.current.x += (mouse.current.tx - mouse.current.x) * 0.08;
+      mouse.current.y += (mouse.current.ty - mouse.current.y) * 0.08;
+      const breathe = 1 + Math.sin(t * 0.9) * 0.035;
+      core.rotation.x += 0.0035 + mouse.current.y * 0.008;
+      core.rotation.y += 0.0055 + mouse.current.x * 0.01;
+      core.position.x = mouse.current.x * 0.12;
+      core.position.y = mouse.current.y * -0.1;
       core.scale.setScalar(breathe);
-      inner.rotation.x -= 0.003;
-      inner.rotation.y += 0.009;
-      pts.rotation.y += 0.0012;
+      inner.rotation.x -= 0.0028;
+      inner.rotation.y += 0.0085;
+      inner.position.x = mouse.current.x * 0.06;
+      inner.position.y = mouse.current.y * -0.05;
+      pts.rotation.y += 0.0011;
+      pts.rotation.x = mouse.current.y * 0.04;
       renderer.render(scene, camera);
     };
 
