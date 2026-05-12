@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { OOH, PAID_CAMPAIGNS, TRENDING_DATA } from "../data/siteData";
+import { EMAIL, OOH, PAID_CAMPAIGNS, TRENDING_DATA } from "../data/siteData";
 
 export default function WorkDrawer({ item, onClose }) {
   if (!item) return null;
@@ -91,7 +91,7 @@ export default function WorkDrawer({ item, onClose }) {
           <button type="button" className="btn-g" disabled>
             View Proof / Case Study (soon)
           </button>
-          <a className="btn-p" href="mailto:npink@bu.edu">
+          <a className="btn-p" href={EMAIL}>
             Contact Nick
           </a>
         </div>

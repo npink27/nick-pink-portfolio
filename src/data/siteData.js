@@ -294,7 +294,7 @@ export const AI_ASSISTANT_INTRO =
 export const PHONE_DISPLAY = "917-618-1834";
 export const PHONE_RAW = "9176181834";
 export const PHONE_HREF = "tel:+19176181834";
-export const EMAIL_ADDRESS = "npink@bu.edu";
+export const EMAIL_ADDRESS = "dsmanagersllc@gmail.com";
 export const LINKEDIN = "https://linkedin.com/in/nicholaspink";
 export const EMAIL = `mailto:${EMAIL_ADDRESS}`;
 

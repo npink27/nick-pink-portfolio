@@ -31,6 +31,15 @@ body {
   line-height: 1.5;
 }
 
+main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark) {
+  color: var(--pink-bright);
+  text-decoration: none;
+}
+main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
+  color: var(--paper);
+  text-decoration: underline;
+}
+
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 184, 212, 0.35);
 }
@@ -46,6 +55,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
   background: rgba(3, 3, 3, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -67,22 +77,26 @@ body {
 .nav-tab {
   font-family: var(--fb);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--muted);
-  border: none;
+  color: rgba(255, 184, 212, 0.95);
+  border: 1px solid transparent;
   background: transparent;
   padding: 8px 14px;
   border-radius: 999px;
   cursor: pointer;
-  transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out);
+  transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out), border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 }
 .nav-tab:hover {
-  color: var(--paper);
+  color: var(--pink-bright);
+  background: rgba(255, 184, 212, 0.12);
+  border-color: rgba(255, 184, 212, 0.35);
 }
 .nav-tab.active {
-  color: var(--text);
-  background: rgba(255, 184, 212, 0.1);
+  color: var(--void);
+  background: linear-gradient(135deg, var(--pink-bright), #ff9ec8);
+  border-color: rgba(255, 184, 212, 0.55);
+  box-shadow: 0 0 22px rgba(255, 184, 212, 0.35);
 }
 
 .nav-cta {
@@ -103,8 +117,7 @@ body {
 }
 
 .nav-mobile-bottom {
-  background: rgba(3, 3, 3, 0.92);
-  border-top: 1px solid var(--line);
+  display: none !important;
 }
 
 .nav-mob.active .nav-mob-dot {
@@ -114,6 +127,11 @@ body {
 
 .page-root {
   padding-top: 62px;
+}
+@media (max-width: 900px) {
+  .page-root {
+    padding-top: clamp(104px, 28vw, 128px);
+  }
 }
 
 /* —— Fullscreen hero —— */
@@ -323,23 +341,35 @@ body {
   font-weight: 500;
   padding: 16px 28px;
   border-radius: 999px;
-  border: 1px solid var(--line2);
+  border: 1px solid rgba(255, 184, 212, 0.4);
   background: transparent;
-  color: var(--paper-dim);
+  color: var(--pink-bright);
   cursor: pointer;
   text-decoration: none;
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 .btn-g:hover {
   color: var(--paper);
-  border-color: rgba(245, 240, 235, 0.28);
-  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 184, 212, 0.65);
+  background: rgba(255, 184, 212, 0.1);
 }
 
-/* Ticker — quiet */
+/* Ticker — quiet + manually scrollable */
 .ticker {
   border-color: var(--line);
   background: var(--charcoal);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.ticker-track {
+  display: flex;
+  gap: 56px;
+  white-space: nowrap;
+  width: max-content;
+  padding: 0 20px;
+  animation: none !important;
 }
 .ti-v {
   color: var(--pink-bright);
@@ -860,13 +890,15 @@ body {
   height: 100% !important;
 }
 
-.nav-desktop {
+.nav-primary {
   display: flex;
   align-items: center;
   gap: 4px;
   flex-wrap: wrap;
   justify-content: center;
   max-width: min(720px, 52vw);
+  flex: 1;
+  min-width: 0;
 }
 .nav-tab-ai {
   border: 1px solid var(--line);
@@ -877,22 +909,40 @@ body {
 }
 
 @media (max-width: 900px) {
-  .nav-desktop {
-    display: none;
+  .site-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 8px;
+    padding: 10px 14px 12px;
   }
-  .nav-mobile-bottom {
+  .brand-mark {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .nav-cta {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+  .nav-primary {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: none;
+    width: 100%;
     justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  .nav-mob {
-    flex: 0 0 auto;
-    min-width: 64px;
-  }
-  .nav-mob-label {
-    font-size: 9px;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 0 2px;
+    margin: 0 -14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-top: 1px solid rgba(255, 184, 212, 0.12);
+    scrollbar-width: thin;
   }
 }
 
@@ -1310,7 +1360,7 @@ body {
 @media (max-width: 900px) {
   .ai-dock-root {
     right: 14px;
-    bottom: 88px;
+    bottom: 24px;
   }
 }
 .ai-dock-panel {
