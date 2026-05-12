@@ -1,33 +1,33 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./App.css";
-import "./surface.css";
+import "./cinematic.css";
 import Navigation from "./components/Navigation.jsx";
+import AiAssistantDock from "./components/AiAssistantDock.jsx";
 import Home from "./pages/Home.jsx";
 import WorkPage from "./pages/WorkPage.jsx";
-import TimelinePage from "./pages/TimelinePage.jsx";
-import ServicesPage from "./pages/ServicesPage.jsx";
-import AskNickPage from "./pages/AskNickPage.jsx";
+import CareerPage from "./pages/CareerPage.jsx";
+import CapabilitiesPage from "./pages/CapabilitiesPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 
 const TITLES = {
-  home: "Nick Pink — Operator",
+  home: "Nick Pink",
   work: "Work — Nick Pink",
-  timeline: "Career — Nick Pink",
-  services: "Capabilities — Nick Pink",
-  ai: "Intel — Nick Pink",
+  career: "Career — Nick Pink",
+  capabilities: "Capabilities — Nick Pink",
   contact: "Contact — Nick Pink",
 };
 
 const pageMotion = {
-  initial: { opacity: 0, y: 14 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -10 },
-  transition: { duration: 0.32, ease: [0.16, 1, 0.3, 1] },
+  exit: { opacity: 0, y: -16 },
+  transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
 };
 
 export default function App() {
   const [page, setPage] = useState("home");
+  const [aiOpen, setAiOpen] = useState(false);
 
   useEffect(() => {
     document.title = TITLES[page] || TITLES.home;
@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <Navigation page={page} setPage={setPage} />
+      <Navigation page={page} setPage={setPage} aiOpen={aiOpen} onToggleAi={() => setAiOpen((v) => !v)} />
       <main>
         <AnimatePresence mode="wait">
           {page === "home" && (
@@ -45,22 +45,17 @@ export default function App() {
           )}
           {page === "work" && (
             <motion.div key="work" className="page-root" {...pageMotion}>
-              <WorkPage setPage={setPage} />
+              <WorkPage />
             </motion.div>
           )}
-          {page === "timeline" && (
-            <motion.div key="timeline" className="page-root" {...pageMotion}>
-              <TimelinePage setPage={setPage} />
+          {page === "career" && (
+            <motion.div key="career" className="page-root" {...pageMotion}>
+              <CareerPage />
             </motion.div>
           )}
-          {page === "services" && (
-            <motion.div key="services" className="page-root" {...pageMotion}>
-              <ServicesPage setPage={setPage} />
-            </motion.div>
-          )}
-          {page === "ai" && (
-            <motion.div key="ai" className="page-root" {...pageMotion}>
-              <AskNickPage setPage={setPage} />
+          {page === "capabilities" && (
+            <motion.div key="capabilities" className="page-root" {...pageMotion}>
+              <CapabilitiesPage />
             </motion.div>
           )}
           {page === "contact" && (
@@ -70,6 +65,7 @@ export default function App() {
           )}
         </AnimatePresence>
       </main>
+      <AiAssistantDock open={aiOpen} onOpenChange={setAiOpen} />
     </div>
   );
 }
