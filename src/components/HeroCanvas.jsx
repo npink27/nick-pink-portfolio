@@ -11,8 +11,8 @@ export default function HeroCanvas() {
     if (!wrap) return;
     const onMove = (e) => {
       const rect = wrap.getBoundingClientRect();
-      mouse.current.tx = ((e.clientX - rect.left) / rect.width - 0.5) * 1.4;
-      mouse.current.ty = ((e.clientY - rect.top) / rect.height - 0.5) * 1.0;
+      mouse.current.tx = ((e.clientX - rect.left) / rect.width - 0.5) * 1.6;
+      mouse.current.ty = ((e.clientY - rect.top) / rect.height - 0.5) * 1.1;
     };
     wrap.addEventListener("pointermove", onMove);
     return () => wrap.removeEventListener("pointermove", onMove);
@@ -25,15 +25,17 @@ export default function HeroCanvas() {
 
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(56, 1, 0.1, 200);
-    camera.position.z = 9;
+    scene.fog = new THREE.FogExp2(0x050505, 0.042);
 
-    const mkStars = (n, col, sz, sp) => {
+    const camera = new THREE.PerspectiveCamera(52, 1, 0.1, 200);
+    camera.position.z = 10;
+
+    const mkDust = (n, col, sz, spread) => {
       const p = new Float32Array(n * 3);
       for (let i = 0; i < n; i++) {
-        p[i * 3] = (Math.random() - 0.5) * sp;
-        p[i * 3 + 1] = (Math.random() - 0.5) * sp;
-        p[i * 3 + 2] = (Math.random() - 0.5) * sp * 0.55;
+        p[i * 3] = (Math.random() - 0.5) * spread;
+        p[i * 3 + 1] = (Math.random() - 0.5) * spread * 0.85;
+        p[i * 3 + 2] = (Math.random() - 0.5) * spread * 0.45;
       }
       const g = new THREE.BufferGeometry();
       g.setAttribute("position", new THREE.BufferAttribute(p, 3));
@@ -43,15 +45,17 @@ export default function HeroCanvas() {
           color: col,
           size: sz,
           transparent: true,
-          opacity: 0.38,
+          opacity: 0.5,
           sizeAttenuation: true,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
         }),
       );
     };
 
-    scene.add(mkStars(560, 0xc8d4e8, 0.016, 52));
-    scene.add(mkStars(220, 0x5eead4, 0.012, 40));
-    scene.add(mkStars(55, 0xe8a4bf, 0.01, 28));
+    scene.add(mkDust(420, 0xe8e0d8, 0.018, 48));
+    scene.add(mkDust(180, 0xffb8d4, 0.014, 36));
+    scene.add(mkDust(90, 0xf5f0eb, 0.01, 22));
 
     let id;
     let t = 0;
@@ -66,12 +70,12 @@ export default function HeroCanvas() {
 
     const loop = () => {
       id = requestAnimationFrame(loop);
-      t += 0.00028;
-      mouse.current.x += (mouse.current.tx - mouse.current.x) * 0.06;
-      mouse.current.y += (mouse.current.ty - mouse.current.y) * 0.06;
-      camera.position.x = Math.sin(t) * 0.38 + mouse.current.x * 0.55;
-      camera.position.y = Math.cos(t * 0.62) * 0.2 + mouse.current.y * 0.45;
-      camera.lookAt(mouse.current.x * 0.3, mouse.current.y * 0.2, 0);
+      t += 0.00022;
+      mouse.current.x += (mouse.current.tx - mouse.current.x) * 0.055;
+      mouse.current.y += (mouse.current.ty - mouse.current.y) * 0.055;
+      camera.position.x = Math.sin(t * 0.8) * 0.42 + mouse.current.x * 0.5;
+      camera.position.y = Math.cos(t * 0.55) * 0.22 + mouse.current.y * 0.42;
+      camera.lookAt(mouse.current.x * 0.25, mouse.current.y * 0.18, 0);
       renderer.render(scene, camera);
     };
 

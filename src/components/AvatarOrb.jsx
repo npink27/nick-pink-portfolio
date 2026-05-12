@@ -31,11 +31,11 @@ export default function AvatarOrb({ parallaxRef }) {
     const core = new THREE.Mesh(
       new THREE.IcosahedronGeometry(1.05, 1),
       new THREE.MeshStandardMaterial({
-        color: 0x0c1824,
-        emissive: 0x0d3d34,
-        emissiveIntensity: 0.55,
-        metalness: 0.42,
-        roughness: 0.38,
+        color: 0x0a0a0a,
+        emissive: 0x3d1522,
+        emissiveIntensity: 0.42,
+        metalness: 0.5,
+        roughness: 0.36,
         wireframe: true,
       }),
     );
@@ -43,7 +43,7 @@ export default function AvatarOrb({ parallaxRef }) {
 
     const inner = new THREE.Mesh(
       new THREE.IcosahedronGeometry(0.72, 0),
-      new THREE.MeshBasicMaterial({ color: 0x5eead4, wireframe: true, transparent: true, opacity: 0.28 }),
+      new THREE.MeshBasicMaterial({ color: 0xffb8d4, wireframe: true, transparent: true, opacity: 0.22 }),
     );
     scene.add(inner);
 
@@ -51,16 +51,16 @@ export default function AvatarOrb({ parallaxRef }) {
       new THREE.BufferGeometry().setFromPoints(
         Array.from({ length: 200 }, () => new THREE.Vector3((Math.random() - 0.5) * 3.2, (Math.random() - 0.5) * 3.2, (Math.random() - 0.5) * 3.2)),
       ),
-      new THREE.PointsMaterial({ color: 0x7ab6ff, size: 0.026, transparent: true, opacity: 0.5 }),
+      new THREE.PointsMaterial({ color: 0xffc8dc, size: 0.024, transparent: true, opacity: 0.45, depthWrite: false }),
     );
     scene.add(pts);
 
-    const amb = new THREE.AmbientLight(0xffffff, 0.32);
-    const dir = new THREE.DirectionalLight(0x5eead4, 0.85);
-    dir.position.set(2, 3, 4);
-    const fill = new THREE.DirectionalLight(0x7ab6ff, 0.35);
-    fill.position.set(-3, -1, 2);
-    scene.add(amb, dir, fill);
+    const amb = new THREE.AmbientLight(0xfff5f0, 0.28);
+    const key = new THREE.DirectionalLight(0xffb8d4, 0.75);
+    key.position.set(2.5, 2.8, 4);
+    const fill = new THREE.DirectionalLight(0xf5f0eb, 0.22);
+    fill.position.set(-2.8, -1.2, 2);
+    scene.add(amb, key, fill);
 
     let id;
     let t = 0;
