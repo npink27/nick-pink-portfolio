@@ -1,11 +1,11 @@
 import { EMAIL, LINKEDIN } from "../data/siteData.js";
 
-export default function ContactCTA({ onNavigate }) {
+export default function ContactCTA() {
   return (
-    <div className="contact-cta glass">
+    <div className="contact-cta-strip">
       <div>
-        <div className="contact-cta-k">Ping</div>
-        <div className="contact-cta-t">Launches, X, paid, OOH, AI ops—send the actual problem.</div>
+        <div className="contact-cta-k">Contact</div>
+        <div className="contact-cta-t">Let&apos;s build something loud.</div>
       </div>
       <div className="contact-cta-actions">
         <a className="btn-p" href={EMAIL}>
@@ -14,11 +14,6 @@ export default function ContactCTA({ onNavigate }) {
         <a className="btn-g" href={LINKEDIN} target="_blank" rel="noreferrer">
           LinkedIn
         </a>
-        {onNavigate && (
-          <button type="button" className="btn-g" onClick={() => onNavigate("contact")}>
-            Contact grid →
-          </button>
-        )}
       </div>
     </div>
   );
