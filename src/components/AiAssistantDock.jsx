@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import AiDockAvatar from "./AiDockAvatar.jsx";
 import { getMockAiReply, INTEL_PROMPTS } from "../data/siteData.js";
 
 export default function AiAssistantDock({ open, onOpenChange }) {
@@ -75,16 +76,7 @@ export default function AiAssistantDock({ open, onOpenChange }) {
         ) : null}
       </AnimatePresence>
 
-      <motion.button
-        type="button"
-        className={`ai-dock-fab ${open ? "is-open" : ""}`}
-        onClick={() => onOpenChange(!open)}
-        aria-expanded={open}
-        aria-label={open ? "Close assistant" : "Open assistant"}
-        whileTap={{ scale: 0.94 }}
-      >
-        <span className="ai-dock-fab-inner">{open ? "×" : "?"}</span>
-      </motion.button>
+      <AiDockAvatar open={open} onOpenChange={onOpenChange} />
     </div>
   );
 }
