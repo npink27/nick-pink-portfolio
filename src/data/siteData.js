@@ -2,12 +2,13 @@
 export const STATS = [
   { v: "2.6M+", l: "organic views, 12 days, MarketWise" },
   { v: "$2B+", l: "peak MC, KISHU window" },
-  { v: "4.25x", l: "ROAS, Minute Growth paid" },
+  { v: "113x", l: "peak ROAS, Minute Growth" },
+  { v: "4.25x", l: "average ROAS, paid acquisition" },
   { v: "$100K+", l: "monthly ad spend managed" },
   { v: "15K+", l: "personalized emails/mo, outbound" },
   { v: "$0.04-$0.08", l: "CPC bands, X and Meta" },
   { v: "~$1.5M", l: "savings tied to Wayfair workflows" },
-  { v: "$1.2M+", l: "OOH-attributed revenue" },
+  { v: "$1.2M+", l: "OOH high-ticket revenue" },
 ];
 
 export const HERO_LIVE_METRICS = STATS;
@@ -71,8 +72,8 @@ export const CAREER_CHAPTERS = [
       "Clients and partners included brands in legal, food, streaming, and fashion verticals.",
     ],
     metrics: [
+      { v: "113x", l: "peak ROAS" },
       { v: "$100K-$250K+", l: "monthly ad spend" },
-      { v: "4.25x", l: "ROAS" },
       { v: "sub-$0.10", l: "CPC" },
       { v: "15,000+", l: "personalized emails/month" },
       { v: "240+", l: "accounts supported" },
@@ -112,43 +113,47 @@ export const CAREER_CHAPTERS = [
   },
 ];
 
-/** Work: grounded case cards (accordion on page) */
+/** Work: case study cards (grid + expandable detail) */
 export const CASE_STUDIES = [
   {
     id: "marketwise",
+    emblem: "MW",
     title: "MarketWise",
-    label: "Social Media and Digital Marketing Lead",
+    label: "Social Media & Digital Marketing Lead",
     dateRange: "Sep 2025 - May 2026",
-    tag: "Public company, financial media",
+    tag: "",
     copy: "Built social and digital growth systems for a public financial media company. Worked across organic content, paid social, clipping teams, creator strategy, and AI-assisted landing page workflows.",
     metrics: [
       { v: "2.6M+", l: "organic views in 12 days" },
       { v: "$0.04-$0.08", l: "CPC on X" },
       { v: "10%", l: "CTRs on Meta" },
-      { v: "<48h", l: "LP builds vs ~3 weeks" },
+      { v: "<48h", l: "landing pages vs ~3 weeks before" },
     ],
     tone: "dark",
     detail: {
       paragraphs: [
-        "Ran growth work where the output had to show up in dashboards and in-market performance, not in slide decks.",
-        "Reduced landing page production time from about three weeks to under 48 hours by tightening workflow, templates, and handoffs between creative and paid.",
+        "Ran growth where results had to show up in dashboards and live performance, not only in decks.",
+        "Cut landing page production from about three weeks to under 48 hours by tightening templates, handoffs, and AI-assisted build steps between creative and paid.",
       ],
       expandedBullets: [
-        "Clipping team infrastructure and posting cadence",
-        "Creator distribution and scaling",
+        "Clipping team infrastructure and cadence",
+        "Creator distribution systems",
         "AI-assisted landing page workflows",
-        "Paid social testing and iteration",
-        "Cross-platform scaling with clear measurement",
+        "Paid social testing and scaling",
+        "Cross-platform measurement",
       ],
+      tools: ["Meta Ads", "X Ads", "Looker", "SQL", "GBQ", "AI landing page systems", "Clip pipelines"],
+      proven: "Public-company pace with creator and paid systems that moved both reach and speed-to-ship.",
     },
   },
   {
     id: "kishu",
+    emblem: "K",
     title: "KISHU",
-    label: "Crypto launch support",
+    label: "Crypto Launch Support",
     dateRange: "",
-    tag: "Community and paid social",
-    copy: "Supported marketing behind one of the fastest meme coin runs of the cycle: community growth, Twitter/X trending support, and Times Square placement.",
+    tag: "",
+    copy: "Supported marketing efforts behind one of the fastest meme coin runs of the cycle through community growth, Twitter/X trending support, and Times Square placement.",
     metrics: [
       { v: "$2B+", l: "peak market cap" },
       { v: "Times Square", l: "placement" },
@@ -157,21 +162,24 @@ export const CASE_STUDIES = [
     tone: "pink",
     detail: {
       paragraphs: [
-        "Work centered on coordinating community-facing growth with high-visibility placements and social momentum during a compressed launch window.",
+        "Coordinated community-facing growth with high-visibility placements and social momentum in a compressed launch window.",
       ],
-      expandedBullets: ["Community growth programs", "X trending coordination", "OOH placement in NYC", "Paid and organic social support"],
+      expandedBullets: ["Community programs", "X trending coordination", "Times Square OOH", "Paid and organic social support"],
+      tools: ["X Ads", "Meta Ads", "Community tooling", "OOH coordination"],
+      proven: "Launch-scale attention without losing thread to measurable social and placement outcomes.",
     },
   },
   {
     id: "minute",
+    emblem: "MG",
     title: "Minute Growth",
     label: "Marketing Operations Manager",
     dateRange: "Dec 2023 - Aug 2025",
-    tag: "Paid, creators, outbound, OOH",
-    copy: "Built and managed campaign systems across paid media, creator partnerships, outbound systems, Twitter/X trending, and out-of-home placements.",
+    tag: "",
+    copy: "Built and managed campaign systems across paid media, creator partnerships, outbound, Twitter/X trending, and out-of-home placements.",
     metrics: [
+      { v: "113x", l: "peak ROAS" },
       { v: "$100K-$250K+", l: "monthly ad spend" },
-      { v: "4.25x", l: "ROAS" },
       { v: "sub-$0.10", l: "CPC" },
       { v: "15,000+", l: "personalized emails/month" },
       { v: "240+", l: "accounts supported" },
@@ -179,20 +187,23 @@ export const CASE_STUDIES = [
     tone: "dark",
     detail: {
       paragraphs: [
-        "Day to day was volume: budgets, creative testing, creator contracts, outbound infrastructure, and making sure reporting matched what finance needed to see.",
+        "High volume: budgets, creative testing, creator contracts, outbound infrastructure, and reporting that matched what finance needed.",
       ],
-      expandedBullets: ["Paid social at scale", "Creator and influencer partnerships", "Outbound automation", "X trending campaigns", "OOH coordination with digital funnels"],
+      expandedBullets: ["Paid social at scale", "Creator and influencer partnerships", "Outbound automation", "X trending", "OOH tied to digital funnels"],
+      tools: ["Meta Ads", "TikTok Ads", "Google Ads", "X Ads", "Outbound automation", "Looker", "Power BI"],
+      proven: "Agency-style throughput with documented ROAS peaks and repeatable campaign systems.",
     },
   },
   {
     id: "paid",
-    title: "Paid acquisition",
-    label: "Paid acquisition",
+    emblem: "PA",
+    title: "Paid Acquisition",
+    label: "Paid Acquisition",
     dateRange: "",
-    tag: "Meta, TikTok, Google, X",
+    tag: "",
     copy: "Built paid campaigns across Meta, TikTok, Google, and X with a focus on efficient testing, strong hooks, and clear conversion paths.",
     metrics: [
-      { v: "4.25x", l: "ROAS" },
+      { v: "4.25x", l: "average ROAS" },
       { v: "$0.04-$0.08", l: "CPC" },
       { v: "4-10%", l: "CTR" },
       { v: "sub-$10", l: "CPL" },
@@ -200,51 +211,70 @@ export const CASE_STUDIES = [
     tone: "charcoal",
     detail: {
       paragraphs: [
-        "Structured tests around creative variants, audience splits, and downstream conversion so spend could be defended with numbers, not narratives.",
+        "Tests were structured around creative variants, audience splits, and downstream conversion so spend could be defended with numbers.",
       ],
-      expandedBullets: ["Creative iteration and hook testing", "Budget pacing and channel mix", "Attribution and downstream tracking", "Reporting for finance and clients"],
+      expandedBullets: ["Hook and creative iteration", "Budget pacing and channel mix", "Attribution and downstream tracking", "Client and finance reporting"],
+      tools: ["Meta Ads", "TikTok Ads", "Google Ads", "X Ads", "GBQ", "Looker"],
+      proven: "Consistent average ROAS with efficient CPC and CPL bands across platforms.",
     },
   },
   {
     id: "ooh",
-    title: "Out-of-home",
-    label: "Out-of-home campaigns",
+    emblem: "OOH",
+    title: "Out-of-Home Campaigns",
+    label: "Out-of-Home Campaigns",
     dateRange: "",
-    tag: "Physical media + digital funnels",
+    tag: "",
     copy: "Worked on Times Square billboards, NYC taxi ads, LED trucks, and large-scale physical media placements tied to digital funnels.",
     metrics: [
-      { v: "$1.2M+", l: "high-ticket revenue attributed" },
+      { v: "$1.2M+", l: "high-ticket revenue" },
       { v: "Times Square", l: "placements" },
-      { v: "NYC taxi", l: "network campaigns" },
+      { v: "NYC taxi", l: "campaigns" },
     ],
     tone: "dark",
     detail: {
       paragraphs: [
-        "OOH was treated as part of the same acquisition story as digital: URLs, creative, and follow-up flows had to match the placement.",
+        "OOH sat in the same acquisition story as digital: URLs, creative, and follow-up flows matched the placement.",
       ],
-      expandedBullets: ["Times Square and high-visibility boards", "Taxi and transit networks", "LED trucks and route-based buys", "Handoff to landing pages and CRM"],
+      expandedBullets: ["Times Square boards", "Taxi and transit", "LED trucks and routes", "Landing pages and CRM handoff"],
+      tools: ["OOH vendors", "Meta Ads", "X Ads", "Landing page systems"],
+      proven: "Physical media tied to digital funnels with seven-figure high-ticket revenue in relevant reporting windows.",
     },
   },
 ];
 
 export const WORK_LEGACY = [];
 
-/** Tools page: flat list */
-export const TOOLS_AND_SYSTEMS = [
-  "SQL",
-  "GBQ",
-  "Looker",
-  "Power BI",
-  "Python",
-  "Meta Ads",
-  "TikTok Ads",
-  "Google Ads",
-  "X Ads",
-  "AI landing page systems",
-  "Outbound automation",
-  "Clip pipelines",
-  "Creator distribution systems",
+/** Tools page: grouped stack */
+export const TOOLS_BY_CATEGORY = [
+  {
+    id: "analytics",
+    title: "Analytics",
+    glyph: "◎",
+    items: ["SQL", "GBQ", "Looker", "Power BI", "Python"],
+  },
+  {
+    id: "paid",
+    title: "Paid Acquisition",
+    glyph: "◇",
+    items: ["Meta Ads", "TikTok Ads", "Google Ads", "X Ads"],
+  },
+  {
+    id: "ai",
+    title: "AI Workflows",
+    glyph: "✦",
+    items: ["AI landing page systems", "Outbound automation", "Prompt workflows", "Creative testing workflows"],
+  },
+  {
+    id: "creator",
+    title: "Creator Systems",
+    glyph: "▶",
+    items: ["Clip pipelines", "Creator distribution systems", "Hook frameworks", "Content cadence systems"],
+  },
 ];
+
+/** Flat list for legacy / AI context */
+export const TOOLS_AND_SYSTEMS = TOOLS_BY_CATEGORY.flatMap((c) => c.items);
 
 /** Legacy: capabilities grid can still import */
 export const CAPABILITIES = TOOLS_AND_SYSTEMS.map((name, i) => ({
@@ -253,18 +283,13 @@ export const CAPABILITIES = TOOLS_AND_SYSTEMS.map((name, i) => ({
   blurb: "Used across analytics, paid acquisition, and growth projects.",
 }));
 
-export const INTEL_PROMPTS = [
-  "What did Nick do at MarketWise?",
-  "What tools does Nick use for analytics and paid media?",
-  "Summarize Nick's experience at Minute Growth.",
-  "How do I contact Nick?",
-];
+export const INTEL_PROMPTS = ["MarketWise metrics?", "How to contact?", "Minute Growth scope?"];
 
 export const MOCK_AI_DEFAULT =
-  "Ask a specific question about Nick's career, work history, tools, or projects. I only answer from that information.";
+  "Ask about roles, metrics, tools, or contact. Answers use Nick's resume and project data only.";
 
 export const AI_ASSISTANT_INTRO =
-  "I answer from Nick's resume and project data only: roles, metrics, tools, paid media, and how to contact him. Ask something specific.";
+  "Career, campaigns, tools, metrics, and contact only. Short factual answers from Nick's data.";
 
 export const PHONE_DISPLAY = "917-618-1834";
 export const PHONE_RAW = "9176181834";
@@ -273,7 +298,7 @@ export const EMAIL_ADDRESS = "npink@bu.edu";
 export const LINKEDIN = "https://linkedin.com/in/nicholaspink";
 export const EMAIL = `mailto:${EMAIL_ADDRESS}`;
 
-const TOOLS_ANSWER = `Nick has used SQL, GBQ, Looker, Power BI, and Python on analytics work. On acquisition he has run Meta Ads, TikTok Ads, Google Ads, and X Ads, plus AI-assisted landing page workflows, outbound automation, clip pipelines, and creator distribution systems across campaigns.`;
+const TOOLS_ANSWER = `Analytics: SQL, GBQ, Looker, Power BI, Python. Paid: Meta, TikTok, Google, and X Ads. AI workflows: landing page systems, outbound automation, prompt and creative testing workflows. Creator side: clip pipelines, distribution, hook frameworks, and cadence systems.`;
 
 export function getMockAiReply(text) {
   const q = text.trim().toLowerCase();
@@ -309,7 +334,7 @@ export function getMockAiReply(text) {
   }
 
   if (/\b(minute growth|minute|outbound|15k|240 accounts|roas)\b/i.test(q)) {
-    return "At Minute Growth (Dec 2023 - Aug 2025) Nick ran marketing operations: roughly $100K-$250K+ monthly ad spend, 4.25x ROAS, sub-$0.10 CPC, 15,000+ personalized emails per month, and 240+ accounts supported, plus creator partnerships, X trending, and OOH tied to digital funnels.";
+    return "At Minute Growth (Dec 2023 - Aug 2025) Nick ran marketing operations: peak 113x ROAS, roughly $100K-$250K+ monthly ad spend, sub-$0.10 CPC, 15,000+ personalized emails per month, 240+ accounts supported, plus creator partnerships, X trending, and OOH tied to digital funnels.";
   }
 
   if (/\b(wayfair|analyst|savings|1\.5m|fulfillment)\b/i.test(q)) {
@@ -329,7 +354,7 @@ export function getMockAiReply(text) {
   }
 
   if (/\b(paid|cpc|ctr|cpl|meta|tiktok|google ads)\b/i.test(q)) {
-    return "Nick has built paid campaigns across Meta, TikTok, Google, and X. Representative benchmarks from his work include 4.25x ROAS, $0.04-$0.08 CPC, 4-10% CTR, and sub-$10 CPL on strong units, with testing structured around hooks and conversion paths.";
+    return "Nick has built paid campaigns across Meta, TikTok, Google, and X. Benchmarks include average 4.25x ROAS, $0.04-$0.08 CPC, 4-10% CTR, and sub-$10 CPL on strong units, with tests built around hooks and conversion paths.";
   }
 
   if (/\b(ooh|out of home|billboard|taxi|led truck)\b/i.test(q)) {

@@ -22,7 +22,7 @@ export default function AiAssistantDock({ open, onOpenChange }) {
     window.setTimeout(() => {
       setMessages((p) => [...p, { role: "assistant", content: getMockAiReply(msg) }]);
       setBusy(false);
-    }, 340);
+    }, 200);
   };
 
   return (

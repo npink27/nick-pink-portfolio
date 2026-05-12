@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 *,
 *::before,
@@ -24,9 +24,10 @@
   --sub: #c9c9e0;
   --muted: #9494b8;
   --dim: #2a2a50;
-  --ff: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --fb: "Inter", system-ui, -apple-system, sans-serif;
-  --fm: "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ff: var(--font-sans);
+  --fb: var(--font-sans);
+  --fm: var(--font-sans);
 }
 
 html {
@@ -230,9 +231,9 @@ body {
 
 /* Layout */
 .wrap {
-  max-width: 1040px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 4vw, 32px);
 }
 
 .section {
