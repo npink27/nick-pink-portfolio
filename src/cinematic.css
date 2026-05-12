@@ -354,22 +354,10 @@ main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
   background: rgba(255, 184, 212, 0.1);
 }
 
-/* Ticker — quiet + manually scrollable */
+/* Ticker — surface + metric colors (layout / scroll / marquee in App.css) */
 .ticker {
   border-color: var(--line);
   background: var(--charcoal);
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-}
-.ticker-track {
-  display: flex;
-  gap: 56px;
-  white-space: nowrap;
-  width: max-content;
-  padding: 0 20px;
-  animation: none !important;
 }
 .ti-v {
   color: var(--pink-bright);

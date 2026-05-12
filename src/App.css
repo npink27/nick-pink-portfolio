@@ -416,7 +416,7 @@ main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
   cursor: not-allowed;
 }
 
-/* Ticker: horizontal scroll (manual); no auto marquee */
+/* Ticker: mobile = manual horizontal scroll; desktop = auto marquee */
 .ticker {
   border-top: 1px solid var(--b);
   border-bottom: 1px solid var(--b);
@@ -435,6 +435,20 @@ main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
   width: max-content;
   padding: 0 24px;
   animation: none;
+}
+
+@media (min-width: 901px) {
+  .ticker {
+    overflow: hidden;
+    scrollbar-width: none;
+  }
+  .ticker-track {
+    width: max-content;
+    animation: marquee 36s linear infinite;
+  }
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
 }
 
 .ti {
