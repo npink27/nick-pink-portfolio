@@ -41,6 +41,7 @@ export default function CareerPage() {
                     <span className="career-tree-years">{ch.years}</span>
                     <span className="career-tree-org">{ch.org}</span>
                     <span className="career-tree-role">{ch.role}</span>
+                    {ch.location ? <span className="career-tree-loc">{ch.location}</span> : null}
                     <p className="career-tree-summary">{ch.summary}</p>
                   </div>
                   <span className="career-tree-chev">{open ? "−" : "+"}</span>

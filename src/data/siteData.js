@@ -1,12 +1,13 @@
 /** Ticker: metric + short context */
 export const STATS = [
   { v: "2.6M+", l: "organic views, 12 days, MarketWise" },
+  { v: "$1M+", l: "monthly ad spend, MarketWise" },
+  { v: "$0.04–$0.08", l: "CPC, MarketWise" },
   { v: "$2B+", l: "peak MC, KISHU window" },
-  { v: "113x", l: "peak ROAS, Minute Growth" },
-  { v: "4.25x", l: "average ROAS, paid acquisition" },
-  { v: "$100K+", l: "monthly ad spend managed" },
-  { v: "15K+", l: "personalized emails/mo, outbound" },
-  { v: "$0.04-$0.08", l: "CPC bands, X and Meta" },
+  { v: "81M+", l: "views, 30-day window, Minute Growth" },
+  { v: "30K+", l: "short-form videos/mo, 240+ accounts" },
+  { v: "600%+", l: "audience growth, under 90 days" },
+  { v: "4.25x", l: "average ROAS, Minute Growth" },
   { v: "~$1.5M", l: "savings tied to Wayfair workflows" },
   { v: "$1.2M+", l: "OOH high-ticket revenue" },
 ];
@@ -24,25 +25,34 @@ export const CLIENTS = [
 ];
 
 /**
- * Vertical career tree (newest first). NxtLvl folded into BU story on expand.
+ * Vertical career tree (reverse chronological).
+ * Order: MarketWise → Zeta → Minute Growth → Wayfair → NxtLvl AdVentures → Boston University
  */
 export const CAREER_CHAPTERS = [
   {
     id: "marketwise",
     emblem: "MW",
     org: "MarketWise",
-    role: "Social Media and Digital Marketing Lead",
-    years: "Sep 2025 - May 2026",
-    summary: "Social growth, clipping, paid acquisition, and AI-assisted landing page systems for a public financial media company.",
+    role: "Social Media & Digital Marketing Lead",
+    years: "Sep 2025 – Present",
+    summary:
+      "Social and digital growth for a public financial media company: paid social, organic, clipping, creators, funnels, and Guru-scale audience work.",
     details: [
-      "Built scalable social and digital growth infrastructure: organic content, paid social, clipping teams, creator strategy, and AI-assisted landing page workflows.",
-      "Focused on repeatable testing, faster production cycles, and cross-platform scaling tied to acquisition goals.",
+      "2.6M+ organic views in 12 days on produced video.",
+      "Managed $1M+ in monthly ad spend with $0.04–$0.08 CPC bands and 4–10% CTR on tested units.",
+      "$7 CPL, about 300% cheaper than benchmarks used for comparison.",
+      "Cut funnel build time from roughly 3 weeks to under 48 hours using tighter workflow, templates, and AI-assisted landing page production.",
+      "Guru accounts: about 200% follower growth per month on supported profiles.",
+      "Ran clipping, creator distribution, and cross-platform testing tied to acquisition goals.",
     ],
     metrics: [
       { v: "2.6M+", l: "organic views in 12 days" },
-      { v: "$0.04-$0.08", l: "CPC on X" },
-      { v: "10%", l: "CTRs on Meta (strong units)" },
-      { v: "<48h", l: "landing page builds vs ~3 weeks before" },
+      { v: "$1M+", l: "monthly ad spend managed" },
+      { v: "$0.04–$0.08", l: "CPC" },
+      { v: "4–10%", l: "CTR" },
+      { v: "$7", l: "CPL vs benchmarks (~300% cheaper)" },
+      { v: "<48h", l: "funnel builds vs ~3 weeks" },
+      { v: "200%", l: "Guru follower growth / month" },
     ],
     featured: true,
   },
@@ -65,18 +75,24 @@ export const CAREER_CHAPTERS = [
     emblem: "MG",
     org: "Minute Growth",
     role: "Marketing Operations Manager",
-    years: "Dec 2023 - Aug 2025",
-    summary: "Paid media, creator campaigns, outbound, influencer partnerships, and large-scale digital campaigns.",
+    years: "Jan 2025 – Aug 2025",
+    summary:
+      "Marketing operations across paid media, creators, outbound, X trending, and OOH, with heavy short-form volume and reporting that matched finance.",
     details: [
-      "Built and managed systems across paid media, creator partnerships, outbound, Twitter/X trending, and out-of-home placements.",
-      "Clients and partners included brands in legal, food, streaming, and fashion verticals.",
+      "30,000+ short-form videos per month across 240+ accounts.",
+      "600%+ audience growth in under 90 days on supported programs.",
+      "4.25x average ROAS on paid campaigns in scope.",
+      "Led content strategy that produced 81,000,000+ views in a single 30-day period.",
+      "Developed an internal tool to trend any subject globally on Twitter/X with a 100% success rate in production use.",
+      "Built and managed systems across paid social, creator partnerships, outbound, and placements tied to digital funnels.",
     ],
     metrics: [
-      { v: "113x", l: "peak ROAS" },
-      { v: "$100K-$250K+", l: "monthly ad spend" },
-      { v: "sub-$0.10", l: "CPC" },
-      { v: "15,000+", l: "personalized emails/month" },
+      { v: "81M+", l: "views in one 30-day period" },
+      { v: "30K+", l: "short-form videos/month" },
       { v: "240+", l: "accounts supported" },
+      { v: "600%+", l: "audience growth, <90 days" },
+      { v: "4.25x", l: "average ROAS" },
+      { v: "100%", l: "X trending tool success rate" },
     ],
     featured: false,
   },
@@ -98,15 +114,36 @@ export const CAREER_CHAPTERS = [
     featured: false,
   },
   {
+    id: "nxtlvl",
+    emblem: "NL",
+    org: "NxtLvl AdVentures",
+    role: "Founder – Social Media Marketing & Brand Scaling Agency",
+    years: "Dec 2021 – Jan 2025",
+    location: "Boston",
+    summary: "Founded and scaled a Boston-based agency from a dorm room: revenue, ROAS, audience growth, and CRO-led conversion lifts for clients.",
+    details: [
+      "Built and exited a marketing agency with $100K+ revenue in a year from a college dorm room.",
+      "Delivered avg 4.25x ROAS campaigns and increased client audiences 600%+ in under 90 days.",
+      "Improved funnel conversion rates by 22%+ through landing page and CRO optimization.",
+    ],
+    metrics: [
+      { v: "$100K+", l: "revenue, first year" },
+      { v: "4.25x", l: "average ROAS, campaigns" },
+      { v: "600%+", l: "audience growth, <90 days" },
+      { v: "22%+", l: "conversion lift, LP/CRO" },
+    ],
+    featured: false,
+  },
+  {
     id: "bu",
     emblem: "BU",
     org: "Boston University",
     role: "Bachelor's Degree",
     years: "2021-2025",
-    summary: "Finance and entrepreneurship at Questrom. Started NxtLvl AdVentures while still in school.",
+    summary: "Finance and entrepreneurship at Questrom. Ran NxtLvl AdVentures and client growth work alongside the degree path.",
     details: [
       "BSBA with focus on finance and entrepreneurship through Questrom.",
-      "Launched NxtLvl AdVentures while attending: client work, paid and creator campaigns, and growth projects alongside coursework.",
+      "Stacked coursework with building NxtLvl AdVentures (Dec 2021–Jan 2025): paid media, creators, and growth projects in market.",
     ],
     metrics: [],
     featured: false,
@@ -120,30 +157,36 @@ export const CASE_STUDIES = [
     emblem: "MW",
     title: "MarketWise",
     label: "Social Media & Digital Marketing Lead",
-    dateRange: "Sep 2025 - May 2026",
+    dateRange: "Sep 2025 – Present",
     tag: "",
-    copy: "Built social and digital growth systems for a public financial media company. Worked across organic content, paid social, clipping teams, creator strategy, and AI-assisted landing page workflows.",
+    copy: "Built social and digital growth systems for a public financial media company: organic video, paid social, clipping, creators, Guru growth, and AI-assisted funnel builds.",
     metrics: [
       { v: "2.6M+", l: "organic views in 12 days" },
-      { v: "$0.04-$0.08", l: "CPC on X" },
-      { v: "10%", l: "CTRs on Meta" },
-      { v: "<48h", l: "landing pages vs ~3 weeks before" },
+      { v: "$1M+", l: "monthly ad spend managed" },
+      { v: "$0.04–$0.08", l: "CPC" },
+      { v: "4–10%", l: "CTR" },
+      { v: "$7", l: "CPL (~300% vs benchmarks)" },
+      { v: "<48h", l: "funnel builds vs ~3 weeks" },
+      { v: "200%", l: "Guru follower growth / mo" },
     ],
     tone: "dark",
     detail: {
       paragraphs: [
         "Ran growth where results had to show up in dashboards and live performance, not only in decks.",
-        "Cut landing page production from about three weeks to under 48 hours by tightening templates, handoffs, and AI-assisted build steps between creative and paid.",
+        "Cut funnel production from about three weeks to under 48 hours by tightening templates, handoffs, and AI-assisted build steps between creative and paid.",
       ],
       expandedBullets: [
-        "Clipping team infrastructure and cadence",
-        "Creator distribution systems",
-        "AI-assisted landing page workflows",
-        "Paid social testing and scaling",
-        "Cross-platform measurement",
+        "$1M+ monthly ad spend with disciplined pacing and testing",
+        "$0.04–$0.08 CPC and 4–10% CTR on strong units",
+        "$7 CPL, roughly 300% cheaper than benchmark comparisons",
+        "2.6M+ organic views in 12 days on produced video",
+        "Guru: ~200% follower growth per month on supported accounts",
+        "Clipping team infrastructure and creator distribution",
+        "AI-assisted landing page and funnel workflows",
+        "Cross-platform measurement and scaling",
       ],
       tools: ["Meta Ads", "X Ads", "Looker", "SQL", "GBQ", "AI landing page systems", "Clip pipelines"],
-      proven: "Public-company pace with creator and paid systems that moved both reach and speed-to-ship.",
+      proven: "Public-company pace with measurable reach, cheaper CPL than benchmarks, and faster ship cycles on funnels.",
     },
   },
   {
@@ -174,24 +217,32 @@ export const CASE_STUDIES = [
     emblem: "MG",
     title: "Minute Growth",
     label: "Marketing Operations Manager",
-    dateRange: "Dec 2023 - Aug 2025",
+    dateRange: "Jan 2025 – Aug 2025",
     tag: "",
-    copy: "Built and managed campaign systems across paid media, creator partnerships, outbound, Twitter/X trending, and out-of-home placements.",
+    copy: "Marketing operations across paid media, creator partnerships, outbound, X trending, and OOH, with massive short-form output and finance-grade reporting.",
     metrics: [
-      { v: "113x", l: "peak ROAS" },
-      { v: "$100K-$250K+", l: "monthly ad spend" },
-      { v: "sub-$0.10", l: "CPC" },
-      { v: "15,000+", l: "personalized emails/month" },
+      { v: "81M+", l: "views in one 30-day period" },
+      { v: "30K+", l: "short-form videos/month" },
       { v: "240+", l: "accounts supported" },
+      { v: "600%+", l: "audience growth, <90 days" },
+      { v: "4.25x", l: "average ROAS" },
+      { v: "100%", l: "X trending tool success rate" },
     ],
     tone: "dark",
     detail: {
       paragraphs: [
-        "High volume: budgets, creative testing, creator contracts, outbound infrastructure, and reporting that matched what finance needed.",
+        "High volume: creative testing, creator contracts, outbound infrastructure, and reporting that matched what finance needed.",
       ],
-      expandedBullets: ["Paid social at scale", "Creator and influencer partnerships", "Outbound automation", "X trending", "OOH tied to digital funnels"],
+      expandedBullets: [
+        "30,000+ short-form videos per month across 240+ accounts",
+        "600%+ audience growth in under 90 days",
+        "4.25x average ROAS on paid campaigns in scope",
+        "81,000,000+ views in a single 30-day period from content strategy",
+        "Tooling to trend any subject globally on Twitter/X with 100% success rate in use",
+        "Paid social at scale, X trending, and OOH tied to digital funnels",
+      ],
       tools: ["Meta Ads", "TikTok Ads", "Google Ads", "X Ads", "Outbound automation", "Looker", "Power BI"],
-      proven: "Agency-style throughput with documented ROAS peaks and repeatable campaign systems.",
+      proven: "Agency throughput with a documented viral window, average ROAS, and repeatable distribution systems.",
     },
   },
   {
@@ -330,19 +381,23 @@ export function getMockAiReply(text) {
   }
 
   if (/\b(marketwise|mktw|public company|financial media|clipping|landing page)\b/i.test(q)) {
-    return "At MarketWise Nick led social and digital growth for a public financial media company: organic content, paid social, clipping teams, creator strategy, and AI-assisted landing page workflows. Outcomes included 2.6M+ organic views in 12 days, $0.04-$0.08 CPC on X, about 10% CTR on strong Meta units, and landing page builds under 48 hours versus roughly three weeks before.";
+    return "At MarketWise (Sep 2025–Present) Nick leads social and digital growth for a public financial media company. Recent scope includes 2.6M+ organic views in 12 days, $1M+ monthly ad spend, $0.04–$0.08 CPC, 4–10% CTR, $7 CPL (~300% cheaper vs benchmarks), funnel builds under 48 hours vs ~3 weeks, and ~200% monthly follower growth on Guru accounts, plus clipping, creators, and AI-assisted funnel workflows.";
   }
 
-  if (/\b(minute growth|minute|outbound|15k|240 accounts|roas)\b/i.test(q)) {
-    return "At Minute Growth (Dec 2023 - Aug 2025) Nick ran marketing operations: peak 113x ROAS, roughly $100K-$250K+ monthly ad spend, sub-$0.10 CPC, 15,000+ personalized emails per month, 240+ accounts supported, plus creator partnerships, X trending, and OOH tied to digital funnels.";
+  if (/\b(minute growth|minute|outbound|240 accounts|roas|81m|30k)\b/i.test(q)) {
+    return "At Minute Growth (Jan 2025–Aug 2025) Nick ran marketing operations: 30,000+ short-form videos per month across 240+ accounts, 600%+ audience growth in under 90 days, 4.25x average ROAS, 81,000,000+ views in a single 30-day period, and an internal X trending tool with 100% success rate in production use, plus paid, creators, outbound, and OOH tied to digital funnels.";
   }
 
   if (/\b(wayfair|analyst|savings|1\.5m|fulfillment)\b/i.test(q)) {
     return "At Wayfair Nick worked as a data analyst on operational analytics tied to about $1.5M in savings. He learned SQL, GBQ, Looker, Power BI, and Python and shipped reporting that held up in production.";
   }
 
-  if (/\b(boston|bu\b|questrom|nxtlvl|college|degree)\b/i.test(q)) {
-    return "Nick graduated from Boston University Questrom (2021-2025) with a BSBA focused on finance and entrepreneurship. He started NxtLvl AdVentures while still in school and ran client-facing growth work alongside classes.";
+  if (/\b(boston|bu\b|questrom|college|degree)\b/i.test(q)) {
+    return "Nick graduated from Boston University Questrom (2021-2025) with a BSBA focused on finance and entrepreneurship. He built NxtLvl AdVentures (Dec 2021–Jan 2025) while in school and stacked client-facing growth work with coursework.";
+  }
+
+  if (/\b(nxtlvl|nxt lvl|dorm|agency founder|100k\+ revenue)\b/i.test(q)) {
+    return "NxtLvl AdVentures (Dec 2021–Jan 2025, Boston): Nick founded the agency from a dorm room, passed $100K revenue in the first year, ran campaigns at 4.25x average ROAS, drove 600%+ audience growth in under 90 days for clients, and lifted funnel conversion 22%+ with landing page and CRO work.";
   }
 
   if (/\b(zeta|segmentation|dashboard)\b/i.test(q)) {
@@ -354,7 +409,7 @@ export function getMockAiReply(text) {
   }
 
   if (/\b(paid|cpc|ctr|cpl|meta|tiktok|google ads)\b/i.test(q)) {
-    return "Nick has built paid campaigns across Meta, TikTok, Google, and X. Benchmarks include average 4.25x ROAS, $0.04-$0.08 CPC, 4-10% CTR, and sub-$10 CPL on strong units, with tests built around hooks and conversion paths.";
+    return "Nick has built paid campaigns across Meta, TikTok, Google, and X. Recent benchmarks include 4.25x average ROAS (Minute Growth window), $0.04–$0.08 CPC and 4–10% CTR with $7 CPL at MarketWise, plus sub-$10 CPL bands on other strong units, with tests built around hooks and conversion paths.";
   }
 
   if (/\b(ooh|out of home|billboard|taxi|led truck)\b/i.test(q)) {
@@ -362,10 +417,10 @@ export function getMockAiReply(text) {
   }
 
   if (/\b(resume|cv|job|hire|experience|career timeline)\b/i.test(q)) {
-    return "Timeline: Boston University (2021-2025, NxtLvl started while in school), Wayfair data analyst (2024), Minute Growth marketing operations (Dec 2023 - Aug 2025), Zeta marketing analyst (2025), MarketWise social and digital lead (Sep 2025 - May 2026). Ask about any stop for specifics.";
+    return "Timeline (newest first): MarketWise social and digital lead (Sep 2025–Present), Zeta marketing analyst (Jun–Aug 2025), Minute Growth marketing operations (Jan–Aug 2025), Wayfair data analyst (2024), NxtLvl AdVentures founder (Dec 2021–Jan 2025), Boston University Questrom (2021–2025). Ask about any stop for specifics.";
   }
 
-  return "I can answer from Nick's resume and projects: roles at MarketWise, Minute Growth, Wayfair, Zeta, BU, tools, paid media, OOH, or KISHU. Ask a narrower question for a precise answer.";
+  return "I can answer from Nick's resume and projects: MarketWise, Minute Growth, NxtLvl, Wayfair, Zeta, BU, tools, paid media, OOH, or KISHU. Ask a narrower question for a precise answer.";
 }
 
 export const WORK_CATEGORIES = [];

@@ -1566,27 +1566,36 @@ main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
   position: relative;
   padding: 8px 0 48px;
   max-width: 760px;
+  isolation: isolate;
 }
 .career-tree-rail {
   position: absolute;
   left: 22px;
-  top: 12px;
-  bottom: 12px;
+  top: 40px;
+  bottom: 40px;
   width: 1px;
-  background: linear-gradient(to bottom, rgba(255, 184, 212, 0.35), var(--line));
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 184, 212, 0.28), rgba(255, 255, 255, 0.06));
 }
 .career-tree-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 1;
 }
 .career-tree-item {
   margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
 }
 .career-tree-item.is-featured .career-tree-hit {
   border-color: rgba(255, 184, 212, 0.22);
 }
 .career-tree-hit {
+  position: relative;
+  z-index: 1;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
@@ -1595,7 +1604,7 @@ main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
   text-align: left;
   padding: 20px 20px 20px 16px;
   border: 1px solid var(--line);
-  background: rgba(8, 8, 8, 0.55);
+  background: #0b0b0b;
   color: inherit;
   cursor: pointer;
   transition: border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), background 0.25s var(--ease-out);
@@ -1603,12 +1612,14 @@ main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
 .career-tree-hit:hover {
   border-color: rgba(255, 184, 212, 0.28);
   box-shadow: 0 0 0 1px rgba(255, 184, 212, 0.06);
-  background: rgba(12, 12, 12, 0.75);
+  background: #101010;
 }
 .career-tree-hit.is-open {
   border-color: rgba(255, 184, 212, 0.35);
 }
 .career-tree-emblem {
+  position: relative;
+  z-index: 2;
   flex-shrink: 0;
   width: 44px;
   height: 44px;
@@ -1621,7 +1632,7 @@ main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
   letter-spacing: 0.06em;
   color: var(--pink-bright);
   border: 1px solid rgba(255, 184, 212, 0.25);
-  background: rgba(255, 184, 212, 0.06);
+  background: #121212;
 }
 .career-tree-years {
   font-size: 11px;
@@ -1641,6 +1652,15 @@ main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
   font-size: 14px;
   font-weight: 600;
   color: var(--paper-dim);
+}
+.career-tree-loc {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 .career-tree-main {
   flex: 1;
@@ -1664,12 +1684,14 @@ main a[href]:not(.btn-p):not(.nav-cta):not(.brand-mark):hover {
   padding-top: 4px;
 }
 .career-tree-body {
+  position: relative;
+  z-index: 1;
   overflow: hidden;
-  border-left: 1px solid var(--line);
+  border-top: 1px solid var(--line);
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   margin-left: 0;
-  background: rgba(5, 5, 5, 0.65);
+  background: #0b0b0b;
 }
 .career-tree-body-inner {
   padding: 18px 22px 22px 78px;
